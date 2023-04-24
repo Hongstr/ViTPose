@@ -1,0 +1,1733 @@
+apex is not installed
+apex is not installed
+apex is not installed
+/home/shanchuan/mmcv/mmcv/cnn/bricks/transformer.py:27: UserWarning: Fail to import ``MultiScaleDeformableAttention`` from ``mmcv.ops.multi_scale_deform_attn``, You should install ``mmcv-full`` if you need this module. 
+  warnings.warn('Fail to import ``MultiScaleDeformableAttention`` from '
+/home/shanchuan/ViT/mmpose/utils/setup_env.py:33: UserWarning: Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed.
+  f'Setting OMP_NUM_THREADS environment variable for each process '
+/home/shanchuan/ViT/mmpose/utils/setup_env.py:43: UserWarning: Setting MKL_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed.
+  f'Setting MKL_NUM_THREADS environment variable for each process '
+tools/train.py:107: UserWarning: `--gpus` is deprecated because we only support single GPU mode in non-distributed training. Use `gpus=1` now.
+  warnings.warn('`--gpus` is deprecated because we only support '
+2023-04-22 11:15:53,322 - mmpose - INFO - Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+CUDA available: True
+GPU 0,1: Tesla V100S-PCIE-32GB
+CUDA_HOME: /usr/local/cuda
+NVCC: Build cuda_11.7.r11.7/compiler.31442593_0
+GCC: gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+PyTorch: 1.10.0+cu111
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.2.3 (Git Hash 7336ca9f055cf1bfa13efb658fe15dc9b41f0740)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX512
+  - CUDA Runtime 11.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.0.5
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.1, CUDNN_VERSION=8.0.5, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.10.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.11.0+cu111
+OpenCV: 4.7.0
+MMCV: 1.3.9
+MMCV Compiler: n/a
+MMCV CUDA Compiler: n/a
+MMPose: 0.24.0+d521645
+------------------------------------------------------------
+
+2023-04-22 11:15:53,323 - mmpose - INFO - Distributed training: True
+2023-04-22 11:15:54,408 - mmpose - INFO - Config:
+checkpoint_config = dict(interval=10)
+log_config = dict(interval=1, hooks=[dict(type='TextLoggerHook')])
+log_level = 'INFO'
+load_from = None
+resume_from = None
+dist_params = dict(backend='nccl')
+workflow = [('train', 1)]
+opencv_num_threads = 0
+mp_start_method = 'fork'
+dataset_info = dict(
+    dataset_name='animalweb',
+    paper_info=dict(
+        author=
+        'Li, Shuyuan and Li, Jianguo and Tang, Hanlin and Qian, Rui and Lin, Weiyao',
+        title='ATRW: A Benchmark for Amur Tiger Re-identification in the Wild',
+        container=
+        'Proceedings of the 28th ACM International Conference on Multimedia',
+        year='2020',
+        homepage='https://cvwc2019.github.io/challenge.html'),
+    keypoint_info=dict({
+        0:
+        dict(
+            name='left_eye_left',
+            id=0,
+            color=[51, 153, 255],
+            type='upper',
+            swap='right_eye_right'),
+        1:
+        dict(
+            name='left_eye_right',
+            id=1,
+            color=[51, 153, 255],
+            type='upper',
+            swap='right_eye_left'),
+        2:
+        dict(
+            name='right_eye_left',
+            id=2,
+            color=[51, 153, 255],
+            type='upper',
+            swap='left_eye_right'),
+        3:
+        dict(
+            name='right_eye_right',
+            id=3,
+            color=[255, 128, 0],
+            type='upper',
+            swap='left_eye_left'),
+        4:
+        dict(name='nose', id=4, color=[255, 128, 0], type='upper', swap=''),
+        5:
+        dict(
+            name='left_mouth',
+            id=5,
+            color=[0, 255, 0],
+            type='lower',
+            swap='right_mouth'),
+        6:
+        dict(
+            name='right_mouth',
+            id=6,
+            color=[0, 255, 0],
+            type='lower',
+            swap='left_mouth'),
+        7:
+        dict(
+            name='up_mouth',
+            id=7,
+            color=[255, 128, 0],
+            type='lower',
+            swap='down_mouth'),
+        8:
+        dict(
+            name='down_mouth',
+            id=8,
+            color=[255, 128, 0],
+            type='lower',
+            swap='up_mouth')
+    }),
+    skeleton_info=dict(),
+    joint_weights=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    sigmas=[
+        0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333
+    ])
+evaluation = dict(interval=10, metric='mAP', save_best='AP')
+optimizer = dict(type='Adam', lr=0.0005)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(
+    policy='step',
+    warmup='linear',
+    warmup_iters=500,
+    warmup_ratio=0.001,
+    step=[170, 200])
+total_epochs = 210
+channel_cfg = dict(
+    num_output_channels=9,
+    dataset_joints=9,
+    dataset_channel=[[0, 1, 2, 3, 4, 5, 6, 7, 8]],
+    inference_channel=[0, 1, 2, 3, 4, 5, 6, 7, 8])
+model = dict(
+    type='TopDown',
+    pretrained=None,
+    backbone=dict(
+        type='ViT',
+        img_size=(256, 192),
+        patch_size=16,
+        embed_dim=384,
+        depth=12,
+        num_heads=12,
+        ratio=1,
+        use_checkpoint=False,
+        mlp_ratio=4,
+        qkv_bias=True,
+        drop_path_rate=0.3),
+    keypoint_head=dict(
+        type='TopdownHeatmapSimpleHead',
+        in_channels=384,
+        num_deconv_layers=2,
+        num_deconv_filters=(256, 256),
+        num_deconv_kernels=(4, 4),
+        extra=dict(final_conv_kernel=1),
+        out_channels=9,
+        loss_keypoint=dict(type='JointsMSELoss', use_target_weight=True)),
+    train_cfg=dict(),
+    test_cfg=dict(
+        flip_test=True,
+        post_process='default',
+        shift_heatmap=True,
+        modulate_kernel=11))
+data_cfg = dict(
+    image_size=[192, 256],
+    heatmap_size=[48, 64],
+    num_output_channels=9,
+    num_joints=9,
+    dataset_channel=[[0, 1, 2, 3, 4, 5, 6, 7, 8]],
+    inference_channel=[0, 1, 2, 3, 4, 5, 6, 7, 8],
+    soft_nms=False,
+    nms_thr=1.0,
+    oks_thr=0.9,
+    vis_thr=0.2,
+    use_gt_bbox=True,
+    det_bbox_thr=0.0,
+    bbox_file='')
+train_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='TopDownRandomFlip', flip_prob=0.5),
+    dict(
+        type='TopDownHalfBodyTransform',
+        num_joints_half_body=8,
+        prob_half_body=0.3),
+    dict(
+        type='TopDownGetRandomScaleRotation', rot_factor=40, scale_factor=0.5),
+    dict(type='TopDownAffine'),
+    dict(type='ToTensor'),
+    dict(
+        type='NormalizeTensor',
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]),
+    dict(type='TopDownGenerateTarget', sigma=2),
+    dict(
+        type='Collect',
+        keys=['img', 'target', 'target_weight'],
+        meta_keys=[
+            'image_file', 'joints_3d', 'joints_3d_visible', 'center', 'scale',
+            'rotation', 'bbox_score', 'flip_pairs'
+        ])
+]
+val_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='TopDownAffine'),
+    dict(type='ToTensor'),
+    dict(
+        type='NormalizeTensor',
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]),
+    dict(
+        type='Collect',
+        keys=['img'],
+        meta_keys=[
+            'image_file', 'center', 'scale', 'rotation', 'bbox_score',
+            'flip_pairs'
+        ])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='TopDownAffine'),
+    dict(type='ToTensor'),
+    dict(
+        type='NormalizeTensor',
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]),
+    dict(
+        type='Collect',
+        keys=['img'],
+        meta_keys=[
+            'image_file', 'center', 'scale', 'rotation', 'bbox_score',
+            'flip_pairs'
+        ])
+]
+data_root = '/home/shanchuan/data/animal_dataset_v1_c'
+data = dict(
+    samples_per_gpu=64,
+    workers_per_gpu=4,
+    val_dataloader=dict(samples_per_gpu=32),
+    test_dataloader=dict(samples_per_gpu=32),
+    train=dict(
+        type='AnimalAnimalWebDataset',
+        ann_file=
+        '/home/shanchuan/data/animal_dataset_v1_c/japanesemacaque_train.json',
+        img_prefix=
+        '/home/shanchuan/data/animal_dataset_v1_c/animal_dataset_v1_clean_check/',
+        data_cfg=dict(
+            image_size=[192, 256],
+            heatmap_size=[48, 64],
+            num_output_channels=9,
+            num_joints=9,
+            dataset_channel=[[0, 1, 2, 3, 4, 5, 6, 7, 8]],
+            inference_channel=[0, 1, 2, 3, 4, 5, 6, 7, 8],
+            soft_nms=False,
+            nms_thr=1.0,
+            oks_thr=0.9,
+            vis_thr=0.2,
+            use_gt_bbox=True,
+            det_bbox_thr=0.0,
+            bbox_file=''),
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='TopDownRandomFlip', flip_prob=0.5),
+            dict(
+                type='TopDownHalfBodyTransform',
+                num_joints_half_body=8,
+                prob_half_body=0.3),
+            dict(
+                type='TopDownGetRandomScaleRotation',
+                rot_factor=40,
+                scale_factor=0.5),
+            dict(type='TopDownAffine'),
+            dict(type='ToTensor'),
+            dict(
+                type='NormalizeTensor',
+                mean=[0.485, 0.456, 0.406],
+                std=[0.229, 0.224, 0.225]),
+            dict(type='TopDownGenerateTarget', sigma=2),
+            dict(
+                type='Collect',
+                keys=['img', 'target', 'target_weight'],
+                meta_keys=[
+                    'image_file', 'joints_3d', 'joints_3d_visible', 'center',
+                    'scale', 'rotation', 'bbox_score', 'flip_pairs'
+                ])
+        ],
+        dataset_info=dict(
+            dataset_name='animalweb',
+            paper_info=dict(
+                author=
+                'Li, Shuyuan and Li, Jianguo and Tang, Hanlin and Qian, Rui and Lin, Weiyao',
+                title=
+                'ATRW: A Benchmark for Amur Tiger Re-identification in the Wild',
+                container=
+                'Proceedings of the 28th ACM International Conference on Multimedia',
+                year='2020',
+                homepage='https://cvwc2019.github.io/challenge.html'),
+            keypoint_info=dict({
+                0:
+                dict(
+                    name='left_eye_left',
+                    id=0,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='right_eye_right'),
+                1:
+                dict(
+                    name='left_eye_right',
+                    id=1,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='right_eye_left'),
+                2:
+                dict(
+                    name='right_eye_left',
+                    id=2,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='left_eye_right'),
+                3:
+                dict(
+                    name='right_eye_right',
+                    id=3,
+                    color=[255, 128, 0],
+                    type='upper',
+                    swap='left_eye_left'),
+                4:
+                dict(
+                    name='nose',
+                    id=4,
+                    color=[255, 128, 0],
+                    type='upper',
+                    swap=''),
+                5:
+                dict(
+                    name='left_mouth',
+                    id=5,
+                    color=[0, 255, 0],
+                    type='lower',
+                    swap='right_mouth'),
+                6:
+                dict(
+                    name='right_mouth',
+                    id=6,
+                    color=[0, 255, 0],
+                    type='lower',
+                    swap='left_mouth'),
+                7:
+                dict(
+                    name='up_mouth',
+                    id=7,
+                    color=[255, 128, 0],
+                    type='lower',
+                    swap='down_mouth'),
+                8:
+                dict(
+                    name='down_mouth',
+                    id=8,
+                    color=[255, 128, 0],
+                    type='lower',
+                    swap='up_mouth')
+            }),
+            skeleton_info=dict(),
+            joint_weights=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            sigmas=[
+                0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333,
+                0.0333
+            ])),
+    val=dict(
+        type='AnimalAnimalWebDataset',
+        ann_file=
+        '/home/shanchuan/data/animal_dataset_v1_c/japanesemacaque_test.json',
+        img_prefix=
+        '/home/shanchuan/data/animal_dataset_v1_c/animal_dataset_v1_clean_check/',
+        data_cfg=dict(
+            image_size=[192, 256],
+            heatmap_size=[48, 64],
+            num_output_channels=9,
+            num_joints=9,
+            dataset_channel=[[0, 1, 2, 3, 4, 5, 6, 7, 8]],
+            inference_channel=[0, 1, 2, 3, 4, 5, 6, 7, 8],
+            soft_nms=False,
+            nms_thr=1.0,
+            oks_thr=0.9,
+            vis_thr=0.2,
+            use_gt_bbox=True,
+            det_bbox_thr=0.0,
+            bbox_file=''),
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='TopDownAffine'),
+            dict(type='ToTensor'),
+            dict(
+                type='NormalizeTensor',
+                mean=[0.485, 0.456, 0.406],
+                std=[0.229, 0.224, 0.225]),
+            dict(
+                type='Collect',
+                keys=['img'],
+                meta_keys=[
+                    'image_file', 'center', 'scale', 'rotation', 'bbox_score',
+                    'flip_pairs'
+                ])
+        ],
+        dataset_info=dict(
+            dataset_name='animalweb',
+            paper_info=dict(
+                author=
+                'Li, Shuyuan and Li, Jianguo and Tang, Hanlin and Qian, Rui and Lin, Weiyao',
+                title=
+                'ATRW: A Benchmark for Amur Tiger Re-identification in the Wild',
+                container=
+                'Proceedings of the 28th ACM International Conference on Multimedia',
+                year='2020',
+                homepage='https://cvwc2019.github.io/challenge.html'),
+            keypoint_info=dict({
+                0:
+                dict(
+                    name='left_eye_left',
+                    id=0,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='right_eye_right'),
+                1:
+                dict(
+                    name='left_eye_right',
+                    id=1,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='right_eye_left'),
+                2:
+                dict(
+                    name='right_eye_left',
+                    id=2,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='left_eye_right'),
+                3:
+                dict(
+                    name='right_eye_right',
+                    id=3,
+                    color=[255, 128, 0],
+                    type='upper',
+                    swap='left_eye_left'),
+                4:
+                dict(
+                    name='nose',
+                    id=4,
+                    color=[255, 128, 0],
+                    type='upper',
+                    swap=''),
+                5:
+                dict(
+                    name='left_mouth',
+                    id=5,
+                    color=[0, 255, 0],
+                    type='lower',
+                    swap='right_mouth'),
+                6:
+                dict(
+                    name='right_mouth',
+                    id=6,
+                    color=[0, 255, 0],
+                    type='lower',
+                    swap='left_mouth'),
+                7:
+                dict(
+                    name='up_mouth',
+                    id=7,
+                    color=[255, 128, 0],
+                    type='lower',
+                    swap='down_mouth'),
+                8:
+                dict(
+                    name='down_mouth',
+                    id=8,
+                    color=[255, 128, 0],
+                    type='lower',
+                    swap='up_mouth')
+            }),
+            skeleton_info=dict(),
+            joint_weights=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            sigmas=[
+                0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333,
+                0.0333
+            ])),
+    test=dict(
+        type='AnimalAnimalWebDataset',
+        ann_file=
+        '/home/shanchuan/data/animal_dataset_v1_c/japanesemacaque_test.json',
+        img_prefix=
+        '/home/shanchuan/data/animal_dataset_v1_c/animal_dataset_v1_clean_check/',
+        data_cfg=dict(
+            image_size=[192, 256],
+            heatmap_size=[48, 64],
+            num_output_channels=9,
+            num_joints=9,
+            dataset_channel=[[0, 1, 2, 3, 4, 5, 6, 7, 8]],
+            inference_channel=[0, 1, 2, 3, 4, 5, 6, 7, 8],
+            soft_nms=False,
+            nms_thr=1.0,
+            oks_thr=0.9,
+            vis_thr=0.2,
+            use_gt_bbox=True,
+            det_bbox_thr=0.0,
+            bbox_file=''),
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='TopDownAffine'),
+            dict(type='ToTensor'),
+            dict(
+                type='NormalizeTensor',
+                mean=[0.485, 0.456, 0.406],
+                std=[0.229, 0.224, 0.225]),
+            dict(
+                type='Collect',
+                keys=['img'],
+                meta_keys=[
+                    'image_file', 'center', 'scale', 'rotation', 'bbox_score',
+                    'flip_pairs'
+                ])
+        ],
+        dataset_info=dict(
+            dataset_name='animalweb',
+            paper_info=dict(
+                author=
+                'Li, Shuyuan and Li, Jianguo and Tang, Hanlin and Qian, Rui and Lin, Weiyao',
+                title=
+                'ATRW: A Benchmark for Amur Tiger Re-identification in the Wild',
+                container=
+                'Proceedings of the 28th ACM International Conference on Multimedia',
+                year='2020',
+                homepage='https://cvwc2019.github.io/challenge.html'),
+            keypoint_info=dict({
+                0:
+                dict(
+                    name='left_eye_left',
+                    id=0,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='right_eye_right'),
+                1:
+                dict(
+                    name='left_eye_right',
+                    id=1,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='right_eye_left'),
+                2:
+                dict(
+                    name='right_eye_left',
+                    id=2,
+                    color=[51, 153, 255],
+                    type='upper',
+                    swap='left_eye_right'),
+                3:
+                dict(
+                    name='right_eye_right',
+                    id=3,
+                    color=[255, 128, 0],
+                    type='upper',
+                    swap='left_eye_left'),
+                4:
+                dict(
+                    name='nose',
+                    id=4,
+                    color=[255, 128, 0],
+                    type='upper',
+                    swap=''),
+                5:
+                dict(
+                    name='left_mouth',
+                    id=5,
+                    color=[0, 255, 0],
+                    type='lower',
+                    swap='right_mouth'),
+                6:
+                dict(
+                    name='right_mouth',
+                    id=6,
+                    color=[0, 255, 0],
+                    type='lower',
+                    swap='left_mouth'),
+                7:
+                dict(
+                    name='up_mouth',
+                    id=7,
+                    color=[255, 128, 0],
+                    type='lower',
+                    swap='down_mouth'),
+                8:
+                dict(
+                    name='down_mouth',
+                    id=8,
+                    color=[255, 128, 0],
+                    type='lower',
+                    swap='up_mouth')
+            }),
+            skeleton_info=dict(),
+            joint_weights=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            sigmas=[
+                0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333, 0.0333,
+                0.0333
+            ])))
+work_dir = './work_dirs/ViTPose_small_animalweb_256x192'
+gpu_ids = range(0, 1)
+
+2023-04-22 11:15:54,408 - mmpose - INFO - Set random seed to 0, deterministic: False
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+=> num_images: 100
+=> load 100 samples
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+=> num_images: 33
+=> load 33 samples
+2023-04-22 11:16:03,463 - mmpose - INFO - Start running, host: shanchuan@dbg21, work_dir: /home/shanchuan/ViT/work_dirs/ViTPose_small_animalweb_256x192
+2023-04-22 11:16:03,464 - mmpose - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) StepLrUpdaterHook                  
+(NORMAL      ) CheckpointHook                     
+(NORMAL      ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) StepLrUpdaterHook                  
+(NORMAL      ) DistSamplerSeedHook                
+(NORMAL      ) DistEvalHook                       
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) StepLrUpdaterHook                  
+(NORMAL      ) DistEvalHook                       
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(ABOVE_NORMAL) OptimizerHook                      
+(NORMAL      ) CheckpointHook                     
+(NORMAL      ) DistEvalHook                       
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) CheckpointHook                     
+(NORMAL      ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_val_epoch:
+(NORMAL      ) DistSamplerSeedHook                
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_epoch:
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+2023-04-22 11:16:03,464 - mmpose - INFO - workflow: [('train', 1)], max: 210 epochs
+2023-04-22 11:16:08,504 - mmpose - INFO - Epoch [1][1/2]	lr: 5.000e-07, eta: 0:35:08, time: 5.033, data_time: 4.374, memory: 8449, heatmap_loss: 0.0034, acc_pose: 0.0039, loss: 0.0034
+2023-04-22 11:16:08,510 - mmcv - INFO - Reducer buckets have been rebuilt in this iteration.
+2023-04-22 11:16:08,903 - mmpose - INFO - Epoch [1][2/2]	lr: 1.499e-06, eta: 0:18:55, time: 0.399, data_time: 0.007, memory: 8449, heatmap_loss: 0.0034, acc_pose: 0.0139, loss: 0.0034
+2023-04-22 11:16:13,876 - mmpose - INFO - Epoch [2][1/2]	lr: 2.498e-06, eta: 0:23:55, time: 4.893, data_time: 4.299, memory: 8727, heatmap_loss: 0.0033, acc_pose: 0.0101, loss: 0.0033
+2023-04-22 11:16:14,266 - mmpose - INFO - Epoch [2][2/2]	lr: 3.497e-06, eta: 0:18:34, time: 0.393, data_time: 0.006, memory: 8727, heatmap_loss: 0.0035, acc_pose: 0.0071, loss: 0.0035
+2023-04-22 11:16:19,261 - mmpose - INFO - Epoch [3][1/2]	lr: 4.496e-06, eta: 0:21:38, time: 4.928, data_time: 4.317, memory: 8727, heatmap_loss: 0.0033, acc_pose: 0.0214, loss: 0.0033
+2023-04-22 11:16:19,637 - mmpose - INFO - Epoch [3][2/2]	lr: 5.495e-06, eta: 0:18:25, time: 0.377, data_time: 0.007, memory: 8727, heatmap_loss: 0.0034, acc_pose: 0.0071, loss: 0.0034
+2023-04-22 11:16:24,165 - mmpose - INFO - Epoch [4][1/2]	lr: 6.494e-06, eta: 0:20:08, time: 4.464, data_time: 4.185, memory: 8727, heatmap_loss: 0.0034, acc_pose: 0.0339, loss: 0.0034
+2023-04-22 11:16:24,346 - mmpose - INFO - Epoch [4][2/2]	lr: 7.493e-06, eta: 0:17:44, time: 0.181, data_time: 0.003, memory: 8727, heatmap_loss: 0.0034, acc_pose: 0.0445, loss: 0.0034
+2023-04-22 11:16:29,174 - mmpose - INFO - Epoch [5][1/2]	lr: 8.492e-06, eta: 0:19:21, time: 4.757, data_time: 4.160, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.0539, loss: 0.0032
+2023-04-22 11:16:29,561 - mmpose - INFO - Epoch [5][2/2]	lr: 9.491e-06, eta: 0:17:38, time: 0.385, data_time: 0.006, memory: 8727, heatmap_loss: 0.0034, acc_pose: 0.0687, loss: 0.0034
+2023-04-22 11:16:34,555 - mmpose - INFO - Epoch [6][1/2]	lr: 1.049e-05, eta: 0:19:02, time: 4.923, data_time: 4.311, memory: 8727, heatmap_loss: 0.0033, acc_pose: 0.0514, loss: 0.0033
+2023-04-22 11:16:34,934 - mmpose - INFO - Epoch [6][2/2]	lr: 1.149e-05, eta: 0:17:37, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0033, acc_pose: 0.1002, loss: 0.0033
+2023-04-22 11:16:39,979 - mmpose - INFO - Epoch [7][1/2]	lr: 1.249e-05, eta: 0:18:49, time: 4.980, data_time: 4.387, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.0850, loss: 0.0032
+2023-04-22 11:16:40,372 - mmpose - INFO - Epoch [7][2/2]	lr: 1.349e-05, eta: 0:17:38, time: 0.392, data_time: 0.006, memory: 8727, heatmap_loss: 0.0033, acc_pose: 0.0816, loss: 0.0033
+2023-04-22 11:16:45,313 - mmpose - INFO - Epoch [8][1/2]	lr: 1.449e-05, eta: 0:18:36, time: 4.875, data_time: 4.284, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.0917, loss: 0.0032
+2023-04-22 11:16:45,708 - mmpose - INFO - Epoch [8][2/2]	lr: 1.549e-05, eta: 0:17:34, time: 0.395, data_time: 0.008, memory: 8727, heatmap_loss: 0.0033, acc_pose: 0.1214, loss: 0.0033
+2023-04-22 11:16:50,664 - mmpose - INFO - Epoch [9][1/2]	lr: 1.648e-05, eta: 0:18:25, time: 4.884, data_time: 4.279, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.0920, loss: 0.0032
+2023-04-22 11:16:51,044 - mmpose - INFO - Epoch [9][2/2]	lr: 1.748e-05, eta: 0:17:30, time: 0.381, data_time: 0.006, memory: 8727, heatmap_loss: 0.0033, acc_pose: 0.1458, loss: 0.0033
+2023-04-22 11:16:55,964 - mmpose - INFO - Epoch [10][1/2]	lr: 1.848e-05, eta: 0:18:14, time: 4.849, data_time: 4.238, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.1209, loss: 0.0031
+2023-04-22 11:16:56,341 - mmpose - INFO - Epoch [10][2/2]	lr: 1.948e-05, eta: 0:17:24, time: 0.377, data_time: 0.008, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.1449, loss: 0.0032
+2023-04-22 11:16:56,402 - mmpose - INFO - Saving checkpoint at 10 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.6 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 7.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.8 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 22.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.6 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.003
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.003
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.030
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.003
+2023-04-22 11:16:58,437 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_10.pth.
+2023-04-22 11:16:58,437 - mmpose - INFO - Best AP is 0.0003 at 10 epoch.
+2023-04-22 11:16:58,437 - mmpose - INFO - Epoch(val) [10][2]	AP: 0.0003, AP .5: 0.0030, AP .75: 0.0000, AP (M): -1.0000, AP (L): 0.0004, AR: 0.0030, AR .5: 0.0303, AR .75: 0.0000, AR (M): -1.0000, AR (L): 0.0030
+2023-04-22 11:17:03,341 - mmpose - INFO - Epoch [11][1/2]	lr: 2.048e-05, eta: 0:18:05, time: 4.896, data_time: 4.281, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.1365, loss: 0.0032
+2023-04-22 11:17:03,715 - mmpose - INFO - Epoch [11][2/2]	lr: 2.148e-05, eta: 0:17:20, time: 0.376, data_time: 0.008, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.1510, loss: 0.0032
+2023-04-22 11:17:08,568 - mmpose - INFO - Epoch [12][1/2]	lr: 2.248e-05, eta: 0:17:55, time: 4.783, data_time: 4.178, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.1513, loss: 0.0031
+2023-04-22 11:17:08,968 - mmpose - INFO - Epoch [12][2/2]	lr: 2.348e-05, eta: 0:17:14, time: 0.396, data_time: 0.004, memory: 8727, heatmap_loss: 0.0032, acc_pose: 0.1124, loss: 0.0032
+2023-04-22 11:17:13,974 - mmpose - INFO - Epoch [13][1/2]	lr: 2.448e-05, eta: 0:17:48, time: 4.925, data_time: 4.328, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.1503, loss: 0.0031
+2023-04-22 11:17:14,354 - mmpose - INFO - Epoch [13][2/2]	lr: 2.548e-05, eta: 0:17:10, time: 0.381, data_time: 0.008, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.1782, loss: 0.0030
+2023-04-22 11:17:19,450 - mmpose - INFO - Epoch [14][1/2]	lr: 2.647e-05, eta: 0:17:42, time: 5.024, data_time: 4.412, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.1690, loss: 0.0031
+2023-04-22 11:17:19,835 - mmpose - INFO - Epoch [14][2/2]	lr: 2.747e-05, eta: 0:17:07, time: 0.385, data_time: 0.008, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.1931, loss: 0.0031
+2023-04-22 11:17:24,934 - mmpose - INFO - Epoch [15][1/2]	lr: 2.847e-05, eta: 0:17:37, time: 5.009, data_time: 4.403, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.1739, loss: 0.0030
+2023-04-22 11:17:25,322 - mmpose - INFO - Epoch [15][2/2]	lr: 2.947e-05, eta: 0:17:04, time: 0.388, data_time: 0.008, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.2066, loss: 0.0031
+2023-04-22 11:17:30,244 - mmpose - INFO - Epoch [16][1/2]	lr: 3.047e-05, eta: 0:17:29, time: 4.852, data_time: 4.258, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.1703, loss: 0.0031
+2023-04-22 11:17:30,644 - mmpose - INFO - Epoch [16][2/2]	lr: 3.147e-05, eta: 0:16:59, time: 0.400, data_time: 0.008, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.2170, loss: 0.0030
+2023-04-22 11:17:35,290 - mmpose - INFO - Epoch [17][1/2]	lr: 3.247e-05, eta: 0:17:19, time: 4.571, data_time: 4.282, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.1721, loss: 0.0030
+2023-04-22 11:17:35,472 - mmpose - INFO - Epoch [17][2/2]	lr: 3.347e-05, eta: 0:16:48, time: 0.182, data_time: 0.003, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.1984, loss: 0.0031
+2023-04-22 11:17:40,548 - mmpose - INFO - Epoch [18][1/2]	lr: 3.447e-05, eta: 0:17:11, time: 5.004, data_time: 4.414, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.1931, loss: 0.0030
+2023-04-22 11:17:40,933 - mmpose - INFO - Epoch [18][2/2]	lr: 3.547e-05, eta: 0:16:44, time: 0.385, data_time: 0.006, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.2521, loss: 0.0031
+2023-04-22 11:17:45,862 - mmpose - INFO - Epoch [19][1/2]	lr: 3.646e-05, eta: 0:17:05, time: 4.835, data_time: 4.238, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.2500, loss: 0.0030
+2023-04-22 11:17:46,243 - mmpose - INFO - Epoch [19][2/2]	lr: 3.746e-05, eta: 0:16:39, time: 0.381, data_time: 0.008, memory: 8727, heatmap_loss: 0.0031, acc_pose: 0.2123, loss: 0.0031
+2023-04-22 11:17:51,227 - mmpose - INFO - Epoch [20][1/2]	lr: 3.846e-05, eta: 0:16:59, time: 4.918, data_time: 4.300, memory: 8727, heatmap_loss: 0.0029, acc_pose: 0.2737, loss: 0.0029
+2023-04-22 11:17:51,604 - mmpose - INFO - Epoch [20][2/2]	lr: 3.946e-05, eta: 0:16:34, time: 0.378, data_time: 0.006, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.3001, loss: 0.0030
+2023-04-22 11:17:51,672 - mmpose - INFO - Saving checkpoint at 20 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    37s[>>                                ] 2/33, 1.7 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.6 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.3 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.2 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.0 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 7.8 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.7 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.3 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.2 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 13.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 14.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 20.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 21.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 22.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 27.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.3 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.044
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.176
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.003
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.070
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.103
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.364
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.103
+2023-04-22 11:17:53,773 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_20.pth.
+2023-04-22 11:17:53,773 - mmpose - INFO - Best AP is 0.0437 at 20 epoch.
+2023-04-22 11:17:53,773 - mmpose - INFO - Epoch(val) [20][2]	AP: 0.0437, AP .5: 0.1757, AP .75: 0.0033, AP (M): -1.0000, AP (L): 0.0701, AR: 0.1030, AR .5: 0.3636, AR .75: 0.0303, AR (M): -1.0000, AR (L): 0.1030
+2023-04-22 11:17:58,589 - mmpose - INFO - Epoch [21][1/2]	lr: 4.046e-05, eta: 0:16:52, time: 4.810, data_time: 4.442, memory: 8727, heatmap_loss: 0.0029, acc_pose: 0.2786, loss: 0.0029
+2023-04-22 11:17:58,820 - mmpose - INFO - Epoch [21][2/2]	lr: 4.146e-05, eta: 0:16:27, time: 0.232, data_time: 0.005, memory: 8727, heatmap_loss: 0.0029, acc_pose: 0.2631, loss: 0.0029
+2023-04-22 11:18:03,834 - mmpose - INFO - Epoch [22][1/2]	lr: 4.246e-05, eta: 0:16:45, time: 4.940, data_time: 4.336, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.2282, loss: 0.0028
+2023-04-22 11:18:04,213 - mmpose - INFO - Epoch [22][2/2]	lr: 4.346e-05, eta: 0:16:23, time: 0.382, data_time: 0.008, memory: 8727, heatmap_loss: 0.0030, acc_pose: 0.2910, loss: 0.0030
+2023-04-22 11:18:09,059 - mmpose - INFO - Epoch [23][1/2]	lr: 4.446e-05, eta: 0:16:38, time: 4.772, data_time: 4.156, memory: 8727, heatmap_loss: 0.0029, acc_pose: 0.2515, loss: 0.0029
+2023-04-22 11:18:09,437 - mmpose - INFO - Epoch [23][2/2]	lr: 4.545e-05, eta: 0:16:17, time: 0.378, data_time: 0.008, memory: 8727, heatmap_loss: 0.0029, acc_pose: 0.3275, loss: 0.0029
+2023-04-22 11:18:14,331 - mmpose - INFO - Epoch [24][1/2]	lr: 4.645e-05, eta: 0:16:32, time: 4.823, data_time: 4.225, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.2948, loss: 0.0028
+2023-04-22 11:18:14,724 - mmpose - INFO - Epoch [24][2/2]	lr: 4.745e-05, eta: 0:16:12, time: 0.395, data_time: 0.006, memory: 8727, heatmap_loss: 0.0029, acc_pose: 0.3180, loss: 0.0029
+2023-04-22 11:18:19,643 - mmpose - INFO - Epoch [25][1/2]	lr: 4.845e-05, eta: 0:16:26, time: 4.853, data_time: 4.248, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3278, loss: 0.0028
+2023-04-22 11:18:20,038 - mmpose - INFO - Epoch [25][2/2]	lr: 4.945e-05, eta: 0:16:07, time: 0.391, data_time: 0.004, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3274, loss: 0.0028
+2023-04-22 11:18:24,909 - mmpose - INFO - Epoch [26][1/2]	lr: 5.045e-05, eta: 0:16:20, time: 4.801, data_time: 4.212, memory: 8727, heatmap_loss: 0.0029, acc_pose: 0.3270, loss: 0.0029
+2023-04-22 11:18:25,304 - mmpose - INFO - Epoch [26][2/2]	lr: 5.145e-05, eta: 0:16:01, time: 0.395, data_time: 0.008, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3189, loss: 0.0028
+2023-04-22 11:18:30,143 - mmpose - INFO - Epoch [27][1/2]	lr: 5.245e-05, eta: 0:16:13, time: 4.761, data_time: 4.171, memory: 8727, heatmap_loss: 0.0027, acc_pose: 0.3415, loss: 0.0027
+2023-04-22 11:18:30,531 - mmpose - INFO - Epoch [27][2/2]	lr: 5.345e-05, eta: 0:15:55, time: 0.388, data_time: 0.008, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3493, loss: 0.0028
+2023-04-22 11:18:35,554 - mmpose - INFO - Epoch [28][1/2]	lr: 5.445e-05, eta: 0:16:08, time: 4.948, data_time: 4.345, memory: 8727, heatmap_loss: 0.0027, acc_pose: 0.3423, loss: 0.0027
+2023-04-22 11:18:35,949 - mmpose - INFO - Epoch [28][2/2]	lr: 5.544e-05, eta: 0:15:51, time: 0.390, data_time: 0.003, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.4064, loss: 0.0028
+2023-04-22 11:18:40,780 - mmpose - INFO - Epoch [29][1/2]	lr: 5.644e-05, eta: 0:16:02, time: 4.760, data_time: 4.164, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3387, loss: 0.0028
+2023-04-22 11:18:41,172 - mmpose - INFO - Epoch [29][2/2]	lr: 5.744e-05, eta: 0:15:45, time: 0.392, data_time: 0.006, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3675, loss: 0.0028
+2023-04-22 11:18:46,185 - mmpose - INFO - Epoch [30][1/2]	lr: 5.844e-05, eta: 0:15:57, time: 4.934, data_time: 4.337, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3751, loss: 0.0028
+2023-04-22 11:18:46,576 - mmpose - INFO - Epoch [30][2/2]	lr: 5.944e-05, eta: 0:15:41, time: 0.390, data_time: 0.008, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4458, loss: 0.0026
+2023-04-22 11:18:46,640 - mmpose - INFO - Saving checkpoint at 30 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.6 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.0 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 7.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.8 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.3 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 14.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 22.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.6 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.195
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.582
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.102
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.205
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.255
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.636
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.182
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.255
+2023-04-22 11:18:48,705 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_30.pth.
+2023-04-22 11:18:48,706 - mmpose - INFO - Best AP is 0.1949 at 30 epoch.
+2023-04-22 11:18:48,706 - mmpose - INFO - Epoch(val) [30][2]	AP: 0.1949, AP .5: 0.5824, AP .75: 0.1018, AP (M): -1.0000, AP (L): 0.2049, AR: 0.2545, AR .5: 0.6364, AR .75: 0.1818, AR (M): -1.0000, AR (L): 0.2545
+2023-04-22 11:18:53,640 - mmpose - INFO - Epoch [31][1/2]	lr: 6.044e-05, eta: 0:15:52, time: 4.930, data_time: 4.335, memory: 8727, heatmap_loss: 0.0027, acc_pose: 0.3806, loss: 0.0027
+2023-04-22 11:18:54,030 - mmpose - INFO - Epoch [31][2/2]	lr: 6.144e-05, eta: 0:15:36, time: 0.388, data_time: 0.004, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.3391, loss: 0.0028
+2023-04-22 11:18:58,939 - mmpose - INFO - Epoch [32][1/2]	lr: 6.244e-05, eta: 0:15:46, time: 4.832, data_time: 4.223, memory: 8727, heatmap_loss: 0.0027, acc_pose: 0.3791, loss: 0.0027
+2023-04-22 11:18:59,312 - mmpose - INFO - Epoch [32][2/2]	lr: 6.344e-05, eta: 0:15:30, time: 0.372, data_time: 0.006, memory: 8727, heatmap_loss: 0.0027, acc_pose: 0.4152, loss: 0.0027
+2023-04-22 11:19:04,073 - mmpose - INFO - Epoch [33][1/2]	lr: 6.444e-05, eta: 0:15:39, time: 4.683, data_time: 4.100, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4152, loss: 0.0026
+2023-04-22 11:19:04,458 - mmpose - INFO - Epoch [33][2/2]	lr: 6.544e-05, eta: 0:15:24, time: 0.386, data_time: 0.008, memory: 8727, heatmap_loss: 0.0027, acc_pose: 0.4091, loss: 0.0027
+2023-04-22 11:19:09,327 - mmpose - INFO - Epoch [34][1/2]	lr: 6.643e-05, eta: 0:15:33, time: 4.802, data_time: 4.250, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.3838, loss: 0.0026
+2023-04-22 11:19:09,724 - mmpose - INFO - Epoch [34][2/2]	lr: 6.743e-05, eta: 0:15:19, time: 0.401, data_time: 0.008, memory: 8727, heatmap_loss: 0.0028, acc_pose: 0.4160, loss: 0.0028
+2023-04-22 11:19:14,699 - mmpose - INFO - Epoch [35][1/2]	lr: 6.843e-05, eta: 0:15:28, time: 4.897, data_time: 4.314, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4184, loss: 0.0026
+2023-04-22 11:19:15,090 - mmpose - INFO - Epoch [35][2/2]	lr: 6.943e-05, eta: 0:15:14, time: 0.389, data_time: 0.006, memory: 8727, heatmap_loss: 0.0027, acc_pose: 0.4149, loss: 0.0027
+2023-04-22 11:19:20,003 - mmpose - INFO - Epoch [36][1/2]	lr: 7.043e-05, eta: 0:15:22, time: 4.846, data_time: 4.266, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4430, loss: 0.0025
+2023-04-22 11:19:20,398 - mmpose - INFO - Epoch [36][2/2]	lr: 7.143e-05, eta: 0:15:09, time: 0.393, data_time: 0.006, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4254, loss: 0.0025
+2023-04-22 11:19:25,362 - mmpose - INFO - Epoch [37][1/2]	lr: 7.243e-05, eta: 0:15:17, time: 4.890, data_time: 4.288, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.3787, loss: 0.0026
+2023-04-22 11:19:25,740 - mmpose - INFO - Epoch [37][2/2]	lr: 7.343e-05, eta: 0:15:04, time: 0.378, data_time: 0.006, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4711, loss: 0.0026
+2023-04-22 11:19:30,710 - mmpose - INFO - Epoch [38][1/2]	lr: 7.443e-05, eta: 0:15:12, time: 4.892, data_time: 4.297, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4060, loss: 0.0026
+2023-04-22 11:19:31,096 - mmpose - INFO - Epoch [38][2/2]	lr: 7.543e-05, eta: 0:14:59, time: 0.386, data_time: 0.008, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.5000, loss: 0.0024
+2023-04-22 11:19:36,146 - mmpose - INFO - Epoch [39][1/2]	lr: 7.642e-05, eta: 0:15:07, time: 4.979, data_time: 4.375, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4068, loss: 0.0026
+2023-04-22 11:19:36,518 - mmpose - INFO - Epoch [39][2/2]	lr: 7.742e-05, eta: 0:14:54, time: 0.373, data_time: 0.008, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4496, loss: 0.0026
+2023-04-22 11:19:41,358 - mmpose - INFO - Epoch [40][1/2]	lr: 7.842e-05, eta: 0:15:01, time: 4.769, data_time: 4.169, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.3958, loss: 0.0026
+2023-04-22 11:19:41,747 - mmpose - INFO - Epoch [40][2/2]	lr: 7.942e-05, eta: 0:14:49, time: 0.387, data_time: 0.004, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4615, loss: 0.0025
+2023-04-22 11:19:41,810 - mmpose - INFO - Saving checkpoint at 40 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.4 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.3 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.0 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.381
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.705
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.392
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.389
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.433
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.727
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.455
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.433
+2023-04-22 11:19:43,864 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_40.pth.
+2023-04-22 11:19:43,864 - mmpose - INFO - Best AP is 0.3809 at 40 epoch.
+2023-04-22 11:19:43,864 - mmpose - INFO - Epoch(val) [40][2]	AP: 0.3809, AP .5: 0.7048, AP .75: 0.3924, AP (M): -1.0000, AP (L): 0.3895, AR: 0.4333, AR .5: 0.7273, AR .75: 0.4545, AR (M): -1.0000, AR (L): 0.4333
+2023-04-22 11:19:48,576 - mmpose - INFO - Epoch [41][1/2]	lr: 8.042e-05, eta: 0:14:55, time: 4.705, data_time: 4.115, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4399, loss: 0.0025
+2023-04-22 11:19:48,967 - mmpose - INFO - Epoch [41][2/2]	lr: 8.142e-05, eta: 0:14:43, time: 0.389, data_time: 0.006, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4895, loss: 0.0025
+2023-04-22 11:19:53,771 - mmpose - INFO - Epoch [42][1/2]	lr: 8.242e-05, eta: 0:14:49, time: 4.737, data_time: 4.127, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4194, loss: 0.0025
+2023-04-22 11:19:54,164 - mmpose - INFO - Epoch [42][2/2]	lr: 8.342e-05, eta: 0:14:37, time: 0.388, data_time: 0.004, memory: 8727, heatmap_loss: 0.0026, acc_pose: 0.4426, loss: 0.0026
+2023-04-22 11:19:59,001 - mmpose - INFO - Epoch [43][1/2]	lr: 8.442e-05, eta: 0:14:43, time: 4.763, data_time: 4.180, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.4673, loss: 0.0024
+2023-04-22 11:19:59,385 - mmpose - INFO - Epoch [43][2/2]	lr: 8.542e-05, eta: 0:14:32, time: 0.384, data_time: 0.008, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4740, loss: 0.0025
+2023-04-22 11:20:04,273 - mmpose - INFO - Epoch [44][1/2]	lr: 8.641e-05, eta: 0:14:38, time: 4.808, data_time: 4.204, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.4882, loss: 0.0023
+2023-04-22 11:20:04,670 - mmpose - INFO - Epoch [44][2/2]	lr: 8.741e-05, eta: 0:14:26, time: 0.393, data_time: 0.004, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.5143, loss: 0.0024
+2023-04-22 11:20:09,690 - mmpose - INFO - Epoch [45][1/2]	lr: 8.841e-05, eta: 0:14:32, time: 4.945, data_time: 4.358, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4790, loss: 0.0025
+2023-04-22 11:20:10,084 - mmpose - INFO - Epoch [45][2/2]	lr: 8.941e-05, eta: 0:14:22, time: 0.395, data_time: 0.007, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4690, loss: 0.0025
+2023-04-22 11:20:15,084 - mmpose - INFO - Epoch [46][1/2]	lr: 9.041e-05, eta: 0:14:27, time: 4.933, data_time: 4.327, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4519, loss: 0.0025
+2023-04-22 11:20:15,460 - mmpose - INFO - Epoch [46][2/2]	lr: 9.141e-05, eta: 0:14:17, time: 0.374, data_time: 0.006, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4778, loss: 0.0025
+2023-04-22 11:20:20,217 - mmpose - INFO - Epoch [47][1/2]	lr: 9.241e-05, eta: 0:14:21, time: 4.691, data_time: 4.318, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.4881, loss: 0.0024
+2023-04-22 11:20:20,527 - mmpose - INFO - Epoch [47][2/2]	lr: 9.341e-05, eta: 0:14:11, time: 0.305, data_time: 0.004, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.5098, loss: 0.0024
+2023-04-22 11:20:25,513 - mmpose - INFO - Epoch [48][1/2]	lr: 9.441e-05, eta: 0:14:16, time: 4.913, data_time: 4.300, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.4539, loss: 0.0024
+2023-04-22 11:20:25,891 - mmpose - INFO - Epoch [48][2/2]	lr: 9.540e-05, eta: 0:14:06, time: 0.377, data_time: 0.006, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5425, loss: 0.0022
+2023-04-22 11:20:30,890 - mmpose - INFO - Epoch [49][1/2]	lr: 9.640e-05, eta: 0:14:11, time: 4.929, data_time: 4.331, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.4731, loss: 0.0024
+2023-04-22 11:20:31,283 - mmpose - INFO - Epoch [49][2/2]	lr: 9.740e-05, eta: 0:14:01, time: 0.396, data_time: 0.008, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.5161, loss: 0.0024
+2023-04-22 11:20:36,297 - mmpose - INFO - Epoch [50][1/2]	lr: 9.840e-05, eta: 0:14:06, time: 4.943, data_time: 4.332, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5161, loss: 0.0023
+2023-04-22 11:20:36,684 - mmpose - INFO - Epoch [50][2/2]	lr: 9.940e-05, eta: 0:13:56, time: 0.385, data_time: 0.004, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.4498, loss: 0.0023
+2023-04-22 11:20:36,744 - mmpose - INFO - Saving checkpoint at 50 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.4 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.3 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.2 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.1 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 9.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 26.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.0 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.414
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.783
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.419
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.429
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.482
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.818
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.515
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.482
+2023-04-22 11:20:38,780 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_50.pth.
+2023-04-22 11:20:38,780 - mmpose - INFO - Best AP is 0.4137 at 50 epoch.
+2023-04-22 11:20:38,780 - mmpose - INFO - Epoch(val) [50][2]	AP: 0.4137, AP .5: 0.7832, AP .75: 0.4193, AP (M): -1.0000, AP (L): 0.4286, AR: 0.4818, AR .5: 0.8182, AR .75: 0.5152, AR (M): -1.0000, AR (L): 0.4818
+2023-04-22 11:20:43,432 - mmpose - INFO - Epoch [51][1/2]	lr: 1.004e-04, eta: 0:14:00, time: 4.648, data_time: 4.277, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5129, loss: 0.0023
+2023-04-22 11:20:43,664 - mmpose - INFO - Epoch [51][2/2]	lr: 1.014e-04, eta: 0:13:50, time: 0.232, data_time: 0.004, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5143, loss: 0.0022
+2023-04-22 11:20:48,490 - mmpose - INFO - Epoch [52][1/2]	lr: 1.024e-04, eta: 0:13:54, time: 4.755, data_time: 4.156, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.4933, loss: 0.0024
+2023-04-22 11:20:48,884 - mmpose - INFO - Epoch [52][2/2]	lr: 1.034e-04, eta: 0:13:44, time: 0.394, data_time: 0.008, memory: 8727, heatmap_loss: 0.0025, acc_pose: 0.4755, loss: 0.0025
+2023-04-22 11:20:53,882 - mmpose - INFO - Epoch [53][1/2]	lr: 1.044e-04, eta: 0:13:48, time: 4.921, data_time: 4.325, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.4566, loss: 0.0023
+2023-04-22 11:20:54,274 - mmpose - INFO - Epoch [53][2/2]	lr: 1.054e-04, eta: 0:13:39, time: 0.392, data_time: 0.007, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5384, loss: 0.0023
+2023-04-22 11:20:59,231 - mmpose - INFO - Epoch [54][1/2]	lr: 1.064e-04, eta: 0:13:43, time: 4.877, data_time: 4.279, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5058, loss: 0.0022
+2023-04-22 11:20:59,620 - mmpose - INFO - Epoch [54][2/2]	lr: 1.074e-04, eta: 0:13:34, time: 0.390, data_time: 0.006, memory: 8727, heatmap_loss: 0.0024, acc_pose: 0.4944, loss: 0.0024
+2023-04-22 11:21:04,614 - mmpose - INFO - Epoch [55][1/2]	lr: 1.084e-04, eta: 0:13:38, time: 4.928, data_time: 4.305, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5176, loss: 0.0023
+2023-04-22 11:21:04,990 - mmpose - INFO - Epoch [55][2/2]	lr: 1.094e-04, eta: 0:13:29, time: 0.376, data_time: 0.007, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5320, loss: 0.0022
+2023-04-22 11:21:09,749 - mmpose - INFO - Epoch [56][1/2]	lr: 1.104e-04, eta: 0:13:32, time: 4.690, data_time: 4.096, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.4761, loss: 0.0023
+2023-04-22 11:21:10,140 - mmpose - INFO - Epoch [56][2/2]	lr: 1.114e-04, eta: 0:13:24, time: 0.392, data_time: 0.008, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5548, loss: 0.0022
+2023-04-22 11:21:15,048 - mmpose - INFO - Epoch [57][1/2]	lr: 1.124e-04, eta: 0:13:27, time: 4.842, data_time: 4.243, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5316, loss: 0.0022
+2023-04-22 11:21:15,434 - mmpose - INFO - Epoch [57][2/2]	lr: 1.134e-04, eta: 0:13:18, time: 0.387, data_time: 0.007, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5121, loss: 0.0022
+2023-04-22 11:21:20,466 - mmpose - INFO - Epoch [58][1/2]	lr: 1.144e-04, eta: 0:13:22, time: 4.956, data_time: 4.369, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5631, loss: 0.0022
+2023-04-22 11:21:20,864 - mmpose - INFO - Epoch [58][2/2]	lr: 1.154e-04, eta: 0:13:13, time: 0.402, data_time: 0.008, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5171, loss: 0.0023
+2023-04-22 11:21:25,781 - mmpose - INFO - Epoch [59][1/2]	lr: 1.164e-04, eta: 0:13:17, time: 4.844, data_time: 4.248, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5181, loss: 0.0023
+2023-04-22 11:21:26,178 - mmpose - INFO - Epoch [59][2/2]	lr: 1.174e-04, eta: 0:13:08, time: 0.396, data_time: 0.006, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5831, loss: 0.0022
+2023-04-22 11:21:30,764 - mmpose - INFO - Epoch [60][1/2]	lr: 1.184e-04, eta: 0:13:10, time: 4.521, data_time: 4.160, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5122, loss: 0.0022
+2023-04-22 11:21:30,996 - mmpose - INFO - Epoch [60][2/2]	lr: 1.194e-04, eta: 0:13:02, time: 0.232, data_time: 0.005, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5394, loss: 0.0023
+2023-04-22 11:21:31,051 - mmpose - INFO - Saving checkpoint at 60 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 8.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.9 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.460
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.898
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.466
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.468
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.503
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.909
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.515
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.503
+2023-04-22 11:21:33,122 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_60.pth.
+2023-04-22 11:21:33,123 - mmpose - INFO - Best AP is 0.4601 at 60 epoch.
+2023-04-22 11:21:33,123 - mmpose - INFO - Epoch(val) [60][2]	AP: 0.4601, AP .5: 0.8981, AP .75: 0.4663, AP (M): -1.0000, AP (L): 0.4677, AR: 0.5030, AR .5: 0.9091, AR .75: 0.5152, AR (M): -1.0000, AR (L): 0.5030
+2023-04-22 11:21:38,094 - mmpose - INFO - Epoch [61][1/2]	lr: 1.204e-04, eta: 0:13:05, time: 4.964, data_time: 4.372, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5242, loss: 0.0022
+2023-04-22 11:21:38,485 - mmpose - INFO - Epoch [61][2/2]	lr: 1.214e-04, eta: 0:12:57, time: 0.396, data_time: 0.007, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5608, loss: 0.0022
+2023-04-22 11:21:43,426 - mmpose - INFO - Epoch [62][1/2]	lr: 1.224e-04, eta: 0:13:00, time: 4.862, data_time: 4.270, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5483, loss: 0.0022
+2023-04-22 11:21:43,819 - mmpose - INFO - Epoch [62][2/2]	lr: 1.234e-04, eta: 0:12:52, time: 0.395, data_time: 0.006, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.5406, loss: 0.0023
+2023-04-22 11:21:48,749 - mmpose - INFO - Epoch [63][1/2]	lr: 1.244e-04, eta: 0:12:55, time: 4.857, data_time: 4.261, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5675, loss: 0.0021
+2023-04-22 11:21:49,140 - mmpose - INFO - Epoch [63][2/2]	lr: 1.254e-04, eta: 0:12:47, time: 0.395, data_time: 0.008, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.4835, loss: 0.0023
+2023-04-22 11:21:53,776 - mmpose - INFO - Epoch [64][1/2]	lr: 1.264e-04, eta: 0:12:49, time: 4.560, data_time: 4.272, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5169, loss: 0.0021
+2023-04-22 11:21:53,959 - mmpose - INFO - Epoch [64][2/2]	lr: 1.274e-04, eta: 0:12:40, time: 0.183, data_time: 0.003, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5815, loss: 0.0021
+2023-04-22 11:21:59,017 - mmpose - INFO - Epoch [65][1/2]	lr: 1.284e-04, eta: 0:12:43, time: 4.979, data_time: 4.385, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5755, loss: 0.0021
+2023-04-22 11:21:59,417 - mmpose - INFO - Epoch [65][2/2]	lr: 1.294e-04, eta: 0:12:36, time: 0.398, data_time: 0.006, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5936, loss: 0.0021
+2023-04-22 11:22:04,322 - mmpose - INFO - Epoch [66][1/2]	lr: 1.304e-04, eta: 0:12:38, time: 4.834, data_time: 4.233, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5269, loss: 0.0022
+2023-04-22 11:22:04,718 - mmpose - INFO - Epoch [66][2/2]	lr: 1.314e-04, eta: 0:12:30, time: 0.396, data_time: 0.008, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5631, loss: 0.0021
+2023-04-22 11:22:09,600 - mmpose - INFO - Epoch [67][1/2]	lr: 1.324e-04, eta: 0:12:33, time: 4.809, data_time: 4.198, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5478, loss: 0.0022
+2023-04-22 11:22:09,984 - mmpose - INFO - Epoch [67][2/2]	lr: 1.334e-04, eta: 0:12:25, time: 0.384, data_time: 0.007, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5829, loss: 0.0022
+2023-04-22 11:22:14,920 - mmpose - INFO - Epoch [68][1/2]	lr: 1.344e-04, eta: 0:12:27, time: 4.858, data_time: 4.268, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5914, loss: 0.0020
+2023-04-22 11:22:15,322 - mmpose - INFO - Epoch [68][2/2]	lr: 1.354e-04, eta: 0:12:20, time: 0.402, data_time: 0.008, memory: 8727, heatmap_loss: 0.0023, acc_pose: 0.4414, loss: 0.0023
+2023-04-22 11:22:20,318 - mmpose - INFO - Epoch [69][1/2]	lr: 1.364e-04, eta: 0:12:22, time: 4.928, data_time: 4.319, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5768, loss: 0.0021
+2023-04-22 11:22:20,692 - mmpose - INFO - Epoch [69][2/2]	lr: 1.374e-04, eta: 0:12:15, time: 0.375, data_time: 0.007, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5602, loss: 0.0020
+2023-04-22 11:22:25,534 - mmpose - INFO - Epoch [70][1/2]	lr: 1.384e-04, eta: 0:12:17, time: 4.754, data_time: 4.149, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5510, loss: 0.0021
+2023-04-22 11:22:25,929 - mmpose - INFO - Epoch [70][2/2]	lr: 1.394e-04, eta: 0:12:10, time: 0.392, data_time: 0.004, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5828, loss: 0.0019
+2023-04-22 11:22:25,989 - mmpose - INFO - Saving checkpoint at 70 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    35s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.4 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.3 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.2 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.1 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 9.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                      ] 11/33, 10.0 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.9 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>                  ] 15/33, 13.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 18.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 19.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 26.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 27.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 28.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.3 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.521
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.868
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.535
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.531
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.552
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.879
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.576
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.552
+2023-04-22 11:22:28,049 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_70.pth.
+2023-04-22 11:22:28,049 - mmpose - INFO - Best AP is 0.5208 at 70 epoch.
+2023-04-22 11:22:28,049 - mmpose - INFO - Epoch(val) [70][2]	AP: 0.5208, AP .5: 0.8683, AP .75: 0.5352, AP (M): -1.0000, AP (L): 0.5305, AR: 0.5515, AR .5: 0.8788, AR .75: 0.5758, AR (M): -1.0000, AR (L): 0.5515
+2023-04-22 11:22:32,976 - mmpose - INFO - Epoch [71][1/2]	lr: 1.404e-04, eta: 0:12:12, time: 4.920, data_time: 4.317, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5640, loss: 0.0020
+2023-04-22 11:22:33,355 - mmpose - INFO - Epoch [71][2/2]	lr: 1.414e-04, eta: 0:12:05, time: 0.377, data_time: 0.006, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5490, loss: 0.0020
+2023-04-22 11:22:38,320 - mmpose - INFO - Epoch [72][1/2]	lr: 1.424e-04, eta: 0:12:06, time: 4.893, data_time: 4.295, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5383, loss: 0.0021
+2023-04-22 11:22:38,711 - mmpose - INFO - Epoch [72][2/2]	lr: 1.434e-04, eta: 0:12:00, time: 0.393, data_time: 0.007, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5248, loss: 0.0022
+2023-04-22 11:22:43,606 - mmpose - INFO - Epoch [73][1/2]	lr: 1.444e-04, eta: 0:12:01, time: 4.829, data_time: 4.227, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5240, loss: 0.0021
+2023-04-22 11:22:44,002 - mmpose - INFO - Epoch [73][2/2]	lr: 1.454e-04, eta: 0:11:54, time: 0.391, data_time: 0.004, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5916, loss: 0.0020
+2023-04-22 11:22:48,927 - mmpose - INFO - Epoch [74][1/2]	lr: 1.464e-04, eta: 0:11:56, time: 4.860, data_time: 4.252, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5959, loss: 0.0020
+2023-04-22 11:22:49,304 - mmpose - INFO - Epoch [74][2/2]	lr: 1.474e-04, eta: 0:11:49, time: 0.377, data_time: 0.006, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.6644, loss: 0.0020
+2023-04-22 11:22:54,250 - mmpose - INFO - Epoch [75][1/2]	lr: 1.484e-04, eta: 0:11:51, time: 4.860, data_time: 4.258, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5670, loss: 0.0020
+2023-04-22 11:22:54,624 - mmpose - INFO - Epoch [75][2/2]	lr: 1.494e-04, eta: 0:11:44, time: 0.376, data_time: 0.008, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.6122, loss: 0.0021
+2023-04-22 11:22:59,473 - mmpose - INFO - Epoch [76][1/2]	lr: 1.504e-04, eta: 0:11:45, time: 4.780, data_time: 4.167, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.6405, loss: 0.0020
+2023-04-22 11:22:59,852 - mmpose - INFO - Epoch [76][2/2]	lr: 1.513e-04, eta: 0:11:39, time: 0.377, data_time: 0.006, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5955, loss: 0.0020
+2023-04-22 11:23:04,451 - mmpose - INFO - Epoch [77][1/2]	lr: 1.523e-04, eta: 0:11:39, time: 4.532, data_time: 4.246, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5735, loss: 0.0021
+2023-04-22 11:23:04,633 - mmpose - INFO - Epoch [77][2/2]	lr: 1.533e-04, eta: 0:11:33, time: 0.181, data_time: 0.003, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6091, loss: 0.0019
+2023-04-22 11:23:09,541 - mmpose - INFO - Epoch [78][1/2]	lr: 1.543e-04, eta: 0:11:34, time: 4.838, data_time: 4.224, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5683, loss: 0.0020
+2023-04-22 11:23:09,916 - mmpose - INFO - Epoch [78][2/2]	lr: 1.553e-04, eta: 0:11:27, time: 0.377, data_time: 0.007, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5614, loss: 0.0020
+2023-04-22 11:23:14,801 - mmpose - INFO - Epoch [79][1/2]	lr: 1.563e-04, eta: 0:11:28, time: 4.819, data_time: 4.221, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5677, loss: 0.0020
+2023-04-22 11:23:15,193 - mmpose - INFO - Epoch [79][2/2]	lr: 1.573e-04, eta: 0:11:22, time: 0.392, data_time: 0.006, memory: 8727, heatmap_loss: 0.0022, acc_pose: 0.5508, loss: 0.0022
+2023-04-22 11:23:20,008 - mmpose - INFO - Epoch [80][1/2]	lr: 1.583e-04, eta: 0:11:23, time: 4.746, data_time: 4.161, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5979, loss: 0.0021
+2023-04-22 11:23:20,405 - mmpose - INFO - Epoch [80][2/2]	lr: 1.593e-04, eta: 0:11:17, time: 0.399, data_time: 0.008, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5464, loss: 0.0019
+2023-04-22 11:23:20,464 - mmpose - INFO - Saving checkpoint at 80 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 8.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.9 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.523
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.831
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.589
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.530
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.558
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.848
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.606
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.558
+2023-04-22 11:23:22,533 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_80.pth.
+2023-04-22 11:23:22,533 - mmpose - INFO - Best AP is 0.5235 at 80 epoch.
+2023-04-22 11:23:22,533 - mmpose - INFO - Epoch(val) [80][2]	AP: 0.5235, AP .5: 0.8311, AP .75: 0.5890, AP (M): -1.0000, AP (L): 0.5304, AR: 0.5576, AR .5: 0.8485, AR .75: 0.6061, AR (M): -1.0000, AR (L): 0.5576
+2023-04-22 11:23:27,485 - mmpose - INFO - Epoch [81][1/2]	lr: 1.603e-04, eta: 0:11:18, time: 4.945, data_time: 4.334, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6128, loss: 0.0019
+2023-04-22 11:23:27,867 - mmpose - INFO - Epoch [81][2/2]	lr: 1.613e-04, eta: 0:11:12, time: 0.382, data_time: 0.006, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5576, loss: 0.0021
+2023-04-22 11:23:32,895 - mmpose - INFO - Epoch [82][1/2]	lr: 1.623e-04, eta: 0:11:13, time: 4.959, data_time: 4.348, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5495, loss: 0.0021
+2023-04-22 11:23:33,279 - mmpose - INFO - Epoch [82][2/2]	lr: 1.633e-04, eta: 0:11:07, time: 0.384, data_time: 0.008, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6884, loss: 0.0019
+2023-04-22 11:23:38,111 - mmpose - INFO - Epoch [83][1/2]	lr: 1.643e-04, eta: 0:11:07, time: 4.762, data_time: 4.161, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5976, loss: 0.0020
+2023-04-22 11:23:38,504 - mmpose - INFO - Epoch [83][2/2]	lr: 1.653e-04, eta: 0:11:01, time: 0.388, data_time: 0.004, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6195, loss: 0.0019
+2023-04-22 11:23:43,463 - mmpose - INFO - Epoch [84][1/2]	lr: 1.663e-04, eta: 0:11:02, time: 4.878, data_time: 4.290, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5758, loss: 0.0020
+2023-04-22 11:23:43,853 - mmpose - INFO - Epoch [84][2/2]	lr: 1.673e-04, eta: 0:10:56, time: 0.392, data_time: 0.008, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.6529, loss: 0.0020
+2023-04-22 11:23:48,830 - mmpose - INFO - Epoch [85][1/2]	lr: 1.683e-04, eta: 0:10:57, time: 4.901, data_time: 4.299, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5454, loss: 0.0021
+2023-04-22 11:23:49,218 - mmpose - INFO - Epoch [85][2/2]	lr: 1.693e-04, eta: 0:10:51, time: 0.386, data_time: 0.006, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6119, loss: 0.0019
+2023-04-22 11:23:54,259 - mmpose - INFO - Epoch [86][1/2]	lr: 1.703e-04, eta: 0:10:52, time: 4.973, data_time: 4.347, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5854, loss: 0.0020
+2023-04-22 11:23:54,633 - mmpose - INFO - Epoch [86][2/2]	lr: 1.713e-04, eta: 0:10:46, time: 0.374, data_time: 0.006, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5860, loss: 0.0020
+2023-04-22 11:23:59,394 - mmpose - INFO - Epoch [87][1/2]	lr: 1.723e-04, eta: 0:10:47, time: 4.691, data_time: 4.093, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5760, loss: 0.0019
+2023-04-22 11:23:59,780 - mmpose - INFO - Epoch [87][2/2]	lr: 1.733e-04, eta: 0:10:41, time: 0.386, data_time: 0.008, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.6075, loss: 0.0020
+2023-04-22 11:24:04,686 - mmpose - INFO - Epoch [88][1/2]	lr: 1.743e-04, eta: 0:10:41, time: 4.836, data_time: 4.232, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5939, loss: 0.0019
+2023-04-22 11:24:05,065 - mmpose - INFO - Epoch [88][2/2]	lr: 1.753e-04, eta: 0:10:36, time: 0.381, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6484, loss: 0.0017
+2023-04-22 11:24:10,010 - mmpose - INFO - Epoch [89][1/2]	lr: 1.763e-04, eta: 0:10:36, time: 4.874, data_time: 4.273, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5993, loss: 0.0019
+2023-04-22 11:24:10,384 - mmpose - INFO - Epoch [89][2/2]	lr: 1.773e-04, eta: 0:10:30, time: 0.374, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6453, loss: 0.0017
+2023-04-22 11:24:15,220 - mmpose - INFO - Epoch [90][1/2]	lr: 1.783e-04, eta: 0:10:31, time: 4.768, data_time: 4.165, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5796, loss: 0.0020
+2023-04-22 11:24:15,592 - mmpose - INFO - Epoch [90][2/2]	lr: 1.793e-04, eta: 0:10:25, time: 0.372, data_time: 0.008, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.6042, loss: 0.0020
+2023-04-22 11:24:15,656 - mmpose - INFO - Saving checkpoint at 90 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 1.0 task/s, elapsed: 1s, ETA:    33s[>>                                ] 2/33, 1.9 task/s, elapsed: 1s, ETA:    16s[>>>                               ] 3/33, 2.9 task/s, elapsed: 1s, ETA:    10s[>>>>                              ] 4/33, 3.8 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.8 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.7 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.7 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.6 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.6 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 9.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>                      ] 11/33, 10.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 11.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 12.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 13.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>                  ] 15/33, 14.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 15.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 16.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 17.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 18.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 19.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 20.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 21.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 22.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 22.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 23.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 24.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 25.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 26.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 27.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 28.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 29.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 30.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 31.1 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.540
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.899
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.588
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.546
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.588
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.909
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.606
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.588
+2023-04-22 11:24:17,626 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_90.pth.
+2023-04-22 11:24:17,627 - mmpose - INFO - Best AP is 0.5401 at 90 epoch.
+2023-04-22 11:24:17,627 - mmpose - INFO - Epoch(val) [90][2]	AP: 0.5401, AP .5: 0.8991, AP .75: 0.5884, AP (M): -1.0000, AP (L): 0.5462, AR: 0.5879, AR .5: 0.9091, AR .75: 0.6061, AR (M): -1.0000, AR (L): 0.5879
+2023-04-22 11:24:22,339 - mmpose - INFO - Epoch [91][1/2]	lr: 1.803e-04, eta: 0:10:25, time: 4.707, data_time: 4.120, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.5822, loss: 0.0018
+2023-04-22 11:24:22,728 - mmpose - INFO - Epoch [91][2/2]	lr: 1.813e-04, eta: 0:10:20, time: 0.386, data_time: 0.004, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6140, loss: 0.0019
+2023-04-22 11:24:27,531 - mmpose - INFO - Epoch [92][1/2]	lr: 1.823e-04, eta: 0:10:20, time: 4.738, data_time: 4.136, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6028, loss: 0.0019
+2023-04-22 11:24:27,914 - mmpose - INFO - Epoch [92][2/2]	lr: 1.833e-04, eta: 0:10:14, time: 0.381, data_time: 0.004, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6310, loss: 0.0018
+2023-04-22 11:24:32,703 - mmpose - INFO - Epoch [93][1/2]	lr: 1.843e-04, eta: 0:10:14, time: 4.722, data_time: 4.120, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5782, loss: 0.0019
+2023-04-22 11:24:33,078 - mmpose - INFO - Epoch [93][2/2]	lr: 1.853e-04, eta: 0:10:09, time: 0.375, data_time: 0.006, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6565, loss: 0.0019
+2023-04-22 11:24:37,969 - mmpose - INFO - Epoch [94][1/2]	lr: 1.863e-04, eta: 0:10:09, time: 4.815, data_time: 4.199, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5810, loss: 0.0019
+2023-04-22 11:24:38,346 - mmpose - INFO - Epoch [94][2/2]	lr: 1.873e-04, eta: 0:10:04, time: 0.375, data_time: 0.006, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6198, loss: 0.0019
+2023-04-22 11:24:43,269 - mmpose - INFO - Epoch [95][1/2]	lr: 1.883e-04, eta: 0:10:04, time: 4.852, data_time: 4.255, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6172, loss: 0.0019
+2023-04-22 11:24:43,653 - mmpose - INFO - Epoch [95][2/2]	lr: 1.893e-04, eta: 0:09:59, time: 0.385, data_time: 0.008, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6014, loss: 0.0019
+2023-04-22 11:24:48,560 - mmpose - INFO - Epoch [96][1/2]	lr: 1.903e-04, eta: 0:09:59, time: 4.832, data_time: 4.245, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6259, loss: 0.0018
+2023-04-22 11:24:48,949 - mmpose - INFO - Epoch [96][2/2]	lr: 1.913e-04, eta: 0:09:53, time: 0.387, data_time: 0.006, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5651, loss: 0.0020
+2023-04-22 11:24:53,876 - mmpose - INFO - Epoch [97][1/2]	lr: 1.923e-04, eta: 0:09:53, time: 4.847, data_time: 4.253, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5861, loss: 0.0019
+2023-04-22 11:24:54,258 - mmpose - INFO - Epoch [97][2/2]	lr: 1.933e-04, eta: 0:09:48, time: 0.382, data_time: 0.008, memory: 8727, heatmap_loss: 0.0020, acc_pose: 0.5976, loss: 0.0020
+2023-04-22 11:24:59,225 - mmpose - INFO - Epoch [98][1/2]	lr: 1.943e-04, eta: 0:09:48, time: 4.889, data_time: 4.293, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6385, loss: 0.0018
+2023-04-22 11:24:59,619 - mmpose - INFO - Epoch [98][2/2]	lr: 1.953e-04, eta: 0:09:43, time: 0.392, data_time: 0.006, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6435, loss: 0.0018
+2023-04-22 11:25:04,355 - mmpose - INFO - Epoch [99][1/2]	lr: 1.963e-04, eta: 0:09:43, time: 4.669, data_time: 4.304, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5850, loss: 0.0019
+2023-04-22 11:25:04,585 - mmpose - INFO - Epoch [99][2/2]	lr: 1.973e-04, eta: 0:09:38, time: 0.231, data_time: 0.004, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6626, loss: 0.0018
+2023-04-22 11:25:09,585 - mmpose - INFO - Epoch [100][1/2]	lr: 1.983e-04, eta: 0:09:38, time: 4.920, data_time: 4.317, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6533, loss: 0.0018
+2023-04-22 11:25:09,977 - mmpose - INFO - Epoch [100][2/2]	lr: 1.993e-04, eta: 0:09:32, time: 0.387, data_time: 0.004, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6902, loss: 0.0017
+2023-04-22 11:25:10,041 - mmpose - INFO - Saving checkpoint at 100 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    35s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.7 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.6 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.5 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.4 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.3 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.2 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 9.2 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                      ] 11/33, 10.1 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 11.0 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.9 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>                  ] 15/33, 13.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 18.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 19.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 20.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 21.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 22.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 26.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 27.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 28.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 29.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.7 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.552
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.899
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.635
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.558
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.582
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.909
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.667
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.582
+2023-04-22 11:25:12,072 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_100.pth.
+2023-04-22 11:25:12,073 - mmpose - INFO - Best AP is 0.5519 at 100 epoch.
+2023-04-22 11:25:12,073 - mmpose - INFO - Epoch(val) [100][2]	AP: 0.5519, AP .5: 0.8991, AP .75: 0.6347, AP (M): -1.0000, AP (L): 0.5584, AR: 0.5818, AR .5: 0.9091, AR .75: 0.6667, AR (M): -1.0000, AR (L): 0.5818
+2023-04-22 11:25:16,941 - mmpose - INFO - Epoch [101][1/2]	lr: 2.003e-04, eta: 0:09:32, time: 4.860, data_time: 4.266, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6379, loss: 0.0018
+2023-04-22 11:25:17,332 - mmpose - INFO - Epoch [101][2/2]	lr: 2.013e-04, eta: 0:09:27, time: 0.391, data_time: 0.008, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5778, loss: 0.0019
+2023-04-22 11:25:22,232 - mmpose - INFO - Epoch [102][1/2]	lr: 2.023e-04, eta: 0:09:27, time: 4.821, data_time: 4.227, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5858, loss: 0.0019
+2023-04-22 11:25:22,609 - mmpose - INFO - Epoch [102][2/2]	lr: 2.033e-04, eta: 0:09:22, time: 0.377, data_time: 0.008, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6392, loss: 0.0018
+2023-04-22 11:25:27,386 - mmpose - INFO - Epoch [103][1/2]	lr: 2.043e-04, eta: 0:09:22, time: 4.710, data_time: 4.333, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6432, loss: 0.0019
+2023-04-22 11:25:27,617 - mmpose - INFO - Epoch [103][2/2]	lr: 2.053e-04, eta: 0:09:17, time: 0.233, data_time: 0.005, memory: 8727, heatmap_loss: 0.0021, acc_pose: 0.5308, loss: 0.0021
+2023-04-22 11:25:32,494 - mmpose - INFO - Epoch [104][1/2]	lr: 2.063e-04, eta: 0:09:16, time: 4.793, data_time: 4.199, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5979, loss: 0.0019
+2023-04-22 11:25:32,892 - mmpose - INFO - Epoch [104][2/2]	lr: 2.073e-04, eta: 0:09:11, time: 0.395, data_time: 0.004, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6220, loss: 0.0018
+2023-04-22 11:25:37,848 - mmpose - INFO - Epoch [105][1/2]	lr: 2.083e-04, eta: 0:09:11, time: 4.881, data_time: 4.280, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6182, loss: 0.0019
+2023-04-22 11:25:38,224 - mmpose - INFO - Epoch [105][2/2]	lr: 2.093e-04, eta: 0:09:06, time: 0.378, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7127, loss: 0.0016
+2023-04-22 11:25:43,124 - mmpose - INFO - Epoch [106][1/2]	lr: 2.103e-04, eta: 0:09:06, time: 4.826, data_time: 4.232, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.5788, loss: 0.0019
+2023-04-22 11:25:43,521 - mmpose - INFO - Epoch [106][2/2]	lr: 2.113e-04, eta: 0:09:01, time: 0.397, data_time: 0.008, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6208, loss: 0.0018
+2023-04-22 11:25:48,388 - mmpose - INFO - Epoch [107][1/2]	lr: 2.123e-04, eta: 0:09:01, time: 4.794, data_time: 4.206, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6489, loss: 0.0018
+2023-04-22 11:25:48,777 - mmpose - INFO - Epoch [107][2/2]	lr: 2.133e-04, eta: 0:08:56, time: 0.390, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6955, loss: 0.0017
+2023-04-22 11:25:53,823 - mmpose - INFO - Epoch [108][1/2]	lr: 2.143e-04, eta: 0:08:55, time: 4.972, data_time: 4.381, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6018, loss: 0.0018
+2023-04-22 11:25:54,222 - mmpose - INFO - Epoch [108][2/2]	lr: 2.153e-04, eta: 0:08:51, time: 0.397, data_time: 0.006, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6420, loss: 0.0017
+2023-04-22 11:25:59,088 - mmpose - INFO - Epoch [109][1/2]	lr: 2.163e-04, eta: 0:08:50, time: 4.796, data_time: 4.182, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6237, loss: 0.0017
+2023-04-22 11:25:59,466 - mmpose - INFO - Epoch [109][2/2]	lr: 2.173e-04, eta: 0:08:45, time: 0.376, data_time: 0.006, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6326, loss: 0.0018
+2023-04-22 11:26:04,370 - mmpose - INFO - Epoch [110][1/2]	lr: 2.183e-04, eta: 0:08:45, time: 4.820, data_time: 4.230, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6497, loss: 0.0017
+2023-04-22 11:26:04,746 - mmpose - INFO - Epoch [110][2/2]	lr: 2.193e-04, eta: 0:08:40, time: 0.376, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6592, loss: 0.0017
+2023-04-22 11:26:04,810 - mmpose - INFO - Saving checkpoint at 110 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    35s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.5 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.4 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.3 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.2 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 9.1 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                      ] 11/33, 10.0 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.9 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>                  ] 15/33, 13.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 18.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 19.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 20.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 26.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 27.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 28.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 29.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.5 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.586
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.898
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.596
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.595
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.609
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.909
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.636
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.609
+2023-04-22 11:26:06,855 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_110.pth.
+2023-04-22 11:26:06,855 - mmpose - INFO - Best AP is 0.5859 at 110 epoch.
+2023-04-22 11:26:06,855 - mmpose - INFO - Epoch(val) [110][2]	AP: 0.5859, AP .5: 0.8983, AP .75: 0.5960, AP (M): -1.0000, AP (L): 0.5951, AR: 0.6091, AR .5: 0.9091, AR .75: 0.6364, AR (M): -1.0000, AR (L): 0.6091
+2023-04-22 11:26:11,741 - mmpose - INFO - Epoch [111][1/2]	lr: 2.203e-04, eta: 0:08:40, time: 4.877, data_time: 4.284, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6519, loss: 0.0016
+2023-04-22 11:26:12,123 - mmpose - INFO - Epoch [111][2/2]	lr: 2.213e-04, eta: 0:08:35, time: 0.385, data_time: 0.008, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6370, loss: 0.0018
+2023-04-22 11:26:17,089 - mmpose - INFO - Epoch [112][1/2]	lr: 2.223e-04, eta: 0:08:35, time: 4.893, data_time: 4.289, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6394, loss: 0.0018
+2023-04-22 11:26:17,469 - mmpose - INFO - Epoch [112][2/2]	lr: 2.233e-04, eta: 0:08:30, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6561, loss: 0.0017
+2023-04-22 11:26:22,314 - mmpose - INFO - Epoch [113][1/2]	lr: 2.243e-04, eta: 0:08:29, time: 4.768, data_time: 4.148, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6577, loss: 0.0018
+2023-04-22 11:26:22,685 - mmpose - INFO - Epoch [113][2/2]	lr: 2.253e-04, eta: 0:08:25, time: 0.373, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6735, loss: 0.0017
+2023-04-22 11:26:27,675 - mmpose - INFO - Epoch [114][1/2]	lr: 2.263e-04, eta: 0:08:24, time: 4.922, data_time: 4.317, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6755, loss: 0.0017
+2023-04-22 11:26:28,053 - mmpose - INFO - Epoch [114][2/2]	lr: 2.273e-04, eta: 0:08:20, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6031, loss: 0.0019
+2023-04-22 11:26:33,082 - mmpose - INFO - Epoch [115][1/2]	lr: 2.283e-04, eta: 0:08:19, time: 4.952, data_time: 4.345, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6703, loss: 0.0017
+2023-04-22 11:26:33,462 - mmpose - INFO - Epoch [115][2/2]	lr: 2.293e-04, eta: 0:08:14, time: 0.379, data_time: 0.007, memory: 8727, heatmap_loss: 0.0019, acc_pose: 0.6455, loss: 0.0019
+2023-04-22 11:26:38,215 - mmpose - INFO - Epoch [116][1/2]	lr: 2.303e-04, eta: 0:08:14, time: 4.671, data_time: 4.382, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6563, loss: 0.0017
+2023-04-22 11:26:38,452 - mmpose - INFO - Epoch [116][2/2]	lr: 2.313e-04, eta: 0:08:09, time: 0.236, data_time: 0.004, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6587, loss: 0.0016
+2023-04-22 11:26:43,478 - mmpose - INFO - Epoch [117][1/2]	lr: 2.323e-04, eta: 0:08:08, time: 4.956, data_time: 4.349, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.5963, loss: 0.0018
+2023-04-22 11:26:43,861 - mmpose - INFO - Epoch [117][2/2]	lr: 2.333e-04, eta: 0:08:04, time: 0.382, data_time: 0.006, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7135, loss: 0.0016
+2023-04-22 11:26:48,792 - mmpose - INFO - Epoch [118][1/2]	lr: 2.343e-04, eta: 0:08:03, time: 4.844, data_time: 4.227, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6558, loss: 0.0017
+2023-04-22 11:26:49,167 - mmpose - INFO - Epoch [118][2/2]	lr: 2.353e-04, eta: 0:07:59, time: 0.375, data_time: 0.006, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6769, loss: 0.0016
+2023-04-22 11:26:54,014 - mmpose - INFO - Epoch [119][1/2]	lr: 2.363e-04, eta: 0:07:58, time: 4.771, data_time: 4.168, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6602, loss: 0.0017
+2023-04-22 11:26:54,406 - mmpose - INFO - Epoch [119][2/2]	lr: 2.373e-04, eta: 0:07:53, time: 0.392, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6754, loss: 0.0017
+2023-04-22 11:26:59,420 - mmpose - INFO - Epoch [120][1/2]	lr: 2.383e-04, eta: 0:07:53, time: 4.927, data_time: 4.330, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6709, loss: 0.0017
+2023-04-22 11:26:59,806 - mmpose - INFO - Epoch [120][2/2]	lr: 2.393e-04, eta: 0:07:48, time: 0.384, data_time: 0.004, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6983, loss: 0.0017
+2023-04-22 11:26:59,875 - mmpose - INFO - Saving checkpoint at 120 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 1.0 task/s, elapsed: 1s, ETA:    32s[>>                                ] 2/33, 2.0 task/s, elapsed: 1s, ETA:    16s[>>>                               ] 3/33, 3.0 task/s, elapsed: 1s, ETA:    10s[>>>>                              ] 4/33, 4.0 task/s, elapsed: 1s, ETA:     7s[>>>>>                             ] 5/33, 5.0 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 6.0 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 7.0 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 8.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 9.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                       ] 10/33, 10.0 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>                      ] 11/33, 11.0 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 12.0 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 13.0 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 14.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>                  ] 15/33, 15.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 16.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 17.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 18.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 19.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 19.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 20.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 21.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 22.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 23.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 24.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 25.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 26.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 27.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 28.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 29.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 30.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 31.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 32.5 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.552
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.862
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.589
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.562
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.594
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.879
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.636
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.594
+2023-04-22 11:27:01,373 - mmpose - INFO - Epoch(val) [120][2]	AP: 0.5518, AP .5: 0.8625, AP .75: 0.5890, AP (M): -1.0000, AP (L): 0.5624, AR: 0.5939, AR .5: 0.8788, AR .75: 0.6364, AR (M): -1.0000, AR (L): 0.5939
+2023-04-22 11:27:06,256 - mmpose - INFO - Epoch [121][1/2]	lr: 2.403e-04, eta: 0:07:47, time: 4.874, data_time: 4.274, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6344, loss: 0.0018
+2023-04-22 11:27:06,644 - mmpose - INFO - Epoch [121][2/2]	lr: 2.413e-04, eta: 0:07:43, time: 0.391, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6973, loss: 0.0016
+2023-04-22 11:27:11,572 - mmpose - INFO - Epoch [122][1/2]	lr: 2.423e-04, eta: 0:07:42, time: 4.856, data_time: 4.269, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6670, loss: 0.0016
+2023-04-22 11:27:11,972 - mmpose - INFO - Epoch [122][2/2]	lr: 2.433e-04, eta: 0:07:38, time: 0.400, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7184, loss: 0.0015
+2023-04-22 11:27:16,972 - mmpose - INFO - Epoch [123][1/2]	lr: 2.443e-04, eta: 0:07:37, time: 4.932, data_time: 4.315, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6657, loss: 0.0017
+2023-04-22 11:27:17,352 - mmpose - INFO - Epoch [123][2/2]	lr: 2.453e-04, eta: 0:07:33, time: 0.381, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6432, loss: 0.0017
+2023-04-22 11:27:22,315 - mmpose - INFO - Epoch [124][1/2]	lr: 2.463e-04, eta: 0:07:32, time: 4.898, data_time: 4.292, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6758, loss: 0.0016
+2023-04-22 11:27:22,709 - mmpose - INFO - Epoch [124][2/2]	lr: 2.473e-04, eta: 0:07:28, time: 0.391, data_time: 0.004, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6581, loss: 0.0018
+2023-04-22 11:27:27,628 - mmpose - INFO - Epoch [125][1/2]	lr: 2.483e-04, eta: 0:07:27, time: 4.842, data_time: 4.229, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6922, loss: 0.0016
+2023-04-22 11:27:28,009 - mmpose - INFO - Epoch [125][2/2]	lr: 2.493e-04, eta: 0:07:22, time: 0.381, data_time: 0.008, memory: 8727, heatmap_loss: 0.0018, acc_pose: 0.6414, loss: 0.0018
+2023-04-22 11:27:33,034 - mmpose - INFO - Epoch [126][1/2]	lr: 2.502e-04, eta: 0:07:21, time: 4.959, data_time: 4.352, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6713, loss: 0.0015
+2023-04-22 11:27:33,418 - mmpose - INFO - Epoch [126][2/2]	lr: 2.512e-04, eta: 0:07:17, time: 0.385, data_time: 0.006, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6719, loss: 0.0017
+2023-04-22 11:27:38,479 - mmpose - INFO - Epoch [127][1/2]	lr: 2.522e-04, eta: 0:07:16, time: 4.988, data_time: 4.375, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6324, loss: 0.0017
+2023-04-22 11:27:38,857 - mmpose - INFO - Epoch [127][2/2]	lr: 2.532e-04, eta: 0:07:12, time: 0.378, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7000, loss: 0.0015
+2023-04-22 11:27:43,742 - mmpose - INFO - Epoch [128][1/2]	lr: 2.542e-04, eta: 0:07:11, time: 4.815, data_time: 4.225, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6460, loss: 0.0017
+2023-04-22 11:27:44,123 - mmpose - INFO - Epoch [128][2/2]	lr: 2.552e-04, eta: 0:07:07, time: 0.381, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7626, loss: 0.0014
+2023-04-22 11:27:48,741 - mmpose - INFO - Epoch [129][1/2]	lr: 2.562e-04, eta: 0:07:06, time: 4.546, data_time: 4.257, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6720, loss: 0.0017
+2023-04-22 11:27:48,922 - mmpose - INFO - Epoch [129][2/2]	lr: 2.572e-04, eta: 0:07:02, time: 0.181, data_time: 0.003, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7239, loss: 0.0015
+2023-04-22 11:27:53,830 - mmpose - INFO - Epoch [130][1/2]	lr: 2.582e-04, eta: 0:07:00, time: 4.836, data_time: 4.237, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6793, loss: 0.0016
+2023-04-22 11:27:54,205 - mmpose - INFO - Epoch [130][2/2]	lr: 2.592e-04, eta: 0:06:56, time: 0.374, data_time: 0.006, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6812, loss: 0.0015
+2023-04-22 11:27:54,271 - mmpose - INFO - Saving checkpoint at 130 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    37s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.6 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.0 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 7.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.8 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.3 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 14.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 21.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 22.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.5 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.575
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.901
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.613
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.579
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.615
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.909
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.636
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.615
+2023-04-22 11:27:55,917 - mmpose - INFO - Epoch(val) [130][2]	AP: 0.5754, AP .5: 0.9010, AP .75: 0.6131, AP (M): -1.0000, AP (L): 0.5793, AR: 0.6152, AR .5: 0.9091, AR .75: 0.6364, AR (M): -1.0000, AR (L): 0.6152
+2023-04-22 11:28:01,045 - mmpose - INFO - Epoch [131][1/2]	lr: 2.602e-04, eta: 0:06:55, time: 5.120, data_time: 4.520, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6381, loss: 0.0016
+2023-04-22 11:28:01,425 - mmpose - INFO - Epoch [131][2/2]	lr: 2.612e-04, eta: 0:06:51, time: 0.380, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6779, loss: 0.0016
+2023-04-22 11:28:06,403 - mmpose - INFO - Epoch [132][1/2]	lr: 2.622e-04, eta: 0:06:50, time: 4.913, data_time: 4.299, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6751, loss: 0.0017
+2023-04-22 11:28:06,802 - mmpose - INFO - Epoch [132][2/2]	lr: 2.632e-04, eta: 0:06:46, time: 0.395, data_time: 0.004, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6652, loss: 0.0016
+2023-04-22 11:28:11,735 - mmpose - INFO - Epoch [133][1/2]	lr: 2.642e-04, eta: 0:06:45, time: 4.862, data_time: 4.263, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6340, loss: 0.0017
+2023-04-22 11:28:12,001 - mmpose - INFO - Epoch [133][2/2]	lr: 2.652e-04, eta: 0:06:41, time: 0.271, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6226, loss: 0.0017
+2023-04-22 11:28:17,023 - mmpose - INFO - Epoch [134][1/2]	lr: 2.662e-04, eta: 0:06:40, time: 4.945, data_time: 4.342, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6763, loss: 0.0016
+2023-04-22 11:28:17,400 - mmpose - INFO - Epoch [134][2/2]	lr: 2.672e-04, eta: 0:06:36, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6915, loss: 0.0016
+2023-04-22 11:28:22,449 - mmpose - INFO - Epoch [135][1/2]	lr: 2.682e-04, eta: 0:06:34, time: 4.973, data_time: 4.363, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7070, loss: 0.0015
+2023-04-22 11:28:22,826 - mmpose - INFO - Epoch [135][2/2]	lr: 2.692e-04, eta: 0:06:31, time: 0.378, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6638, loss: 0.0015
+2023-04-22 11:28:27,849 - mmpose - INFO - Epoch [136][1/2]	lr: 2.702e-04, eta: 0:06:29, time: 4.936, data_time: 4.331, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6554, loss: 0.0016
+2023-04-22 11:28:28,224 - mmpose - INFO - Epoch [136][2/2]	lr: 2.712e-04, eta: 0:06:25, time: 0.375, data_time: 0.007, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6959, loss: 0.0016
+2023-04-22 11:28:33,173 - mmpose - INFO - Epoch [137][1/2]	lr: 2.722e-04, eta: 0:06:24, time: 4.880, data_time: 4.281, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6738, loss: 0.0016
+2023-04-22 11:28:33,566 - mmpose - INFO - Epoch [137][2/2]	lr: 2.732e-04, eta: 0:06:20, time: 0.391, data_time: 0.004, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6645, loss: 0.0016
+2023-04-22 11:28:38,594 - mmpose - INFO - Epoch [138][1/2]	lr: 2.742e-04, eta: 0:06:19, time: 4.953, data_time: 4.345, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6918, loss: 0.0015
+2023-04-22 11:28:38,975 - mmpose - INFO - Epoch [138][2/2]	lr: 2.752e-04, eta: 0:06:15, time: 0.383, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7000, loss: 0.0016
+2023-04-22 11:28:43,816 - mmpose - INFO - Epoch [139][1/2]	lr: 2.762e-04, eta: 0:06:14, time: 4.763, data_time: 4.151, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6846, loss: 0.0016
+2023-04-22 11:28:44,192 - mmpose - INFO - Epoch [139][2/2]	lr: 2.772e-04, eta: 0:06:10, time: 0.377, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7033, loss: 0.0015
+2023-04-22 11:28:49,129 - mmpose - INFO - Epoch [140][1/2]	lr: 2.782e-04, eta: 0:06:08, time: 4.860, data_time: 4.250, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6807, loss: 0.0016
+2023-04-22 11:28:49,512 - mmpose - INFO - Epoch [140][2/2]	lr: 2.792e-04, eta: 0:06:05, time: 0.384, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7183, loss: 0.0015
+2023-04-22 11:28:49,577 - mmpose - INFO - Saving checkpoint at 140 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.6 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 7.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.8 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.7 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.579
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.871
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.653
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.587
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.609
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.879
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.667
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.609
+2023-04-22 11:28:51,232 - mmpose - INFO - Epoch(val) [140][2]	AP: 0.5793, AP .5: 0.8713, AP .75: 0.6530, AP (M): -1.0000, AP (L): 0.5865, AR: 0.6091, AR .5: 0.8788, AR .75: 0.6667, AR (M): -1.0000, AR (L): 0.6091
+2023-04-22 11:28:55,997 - mmpose - INFO - Epoch [141][1/2]	lr: 2.802e-04, eta: 0:06:03, time: 4.757, data_time: 4.167, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6695, loss: 0.0016
+2023-04-22 11:28:56,393 - mmpose - INFO - Epoch [141][2/2]	lr: 2.812e-04, eta: 0:05:59, time: 0.395, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7255, loss: 0.0014
+2023-04-22 11:29:01,517 - mmpose - INFO - Epoch [142][1/2]	lr: 2.822e-04, eta: 0:05:58, time: 5.048, data_time: 4.458, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6526, loss: 0.0016
+2023-04-22 11:29:01,903 - mmpose - INFO - Epoch [142][2/2]	lr: 2.832e-04, eta: 0:05:54, time: 0.385, data_time: 0.006, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6993, loss: 0.0016
+2023-04-22 11:29:06,891 - mmpose - INFO - Epoch [143][1/2]	lr: 2.842e-04, eta: 0:05:53, time: 4.911, data_time: 4.313, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6886, loss: 0.0016
+2023-04-22 11:29:07,267 - mmpose - INFO - Epoch [143][2/2]	lr: 2.852e-04, eta: 0:05:49, time: 0.378, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7560, loss: 0.0016
+2023-04-22 11:29:12,302 - mmpose - INFO - Epoch [144][1/2]	lr: 2.862e-04, eta: 0:05:48, time: 4.958, data_time: 4.365, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6467, loss: 0.0017
+2023-04-22 11:29:12,699 - mmpose - INFO - Epoch [144][2/2]	lr: 2.872e-04, eta: 0:05:44, time: 0.396, data_time: 0.006, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7468, loss: 0.0015
+2023-04-22 11:29:17,725 - mmpose - INFO - Epoch [145][1/2]	lr: 2.882e-04, eta: 0:05:42, time: 4.958, data_time: 4.361, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6834, loss: 0.0016
+2023-04-22 11:29:18,124 - mmpose - INFO - Epoch [145][2/2]	lr: 2.892e-04, eta: 0:05:39, time: 0.396, data_time: 0.006, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7197, loss: 0.0015
+2023-04-22 11:29:23,092 - mmpose - INFO - Epoch [146][1/2]	lr: 2.902e-04, eta: 0:05:37, time: 4.901, data_time: 4.422, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6828, loss: 0.0016
+2023-04-22 11:29:23,272 - mmpose - INFO - Epoch [146][2/2]	lr: 2.912e-04, eta: 0:05:33, time: 0.180, data_time: 0.003, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6548, loss: 0.0016
+2023-04-22 11:29:28,336 - mmpose - INFO - Epoch [147][1/2]	lr: 2.922e-04, eta: 0:05:32, time: 4.960, data_time: 4.373, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7084, loss: 0.0015
+2023-04-22 11:29:28,733 - mmpose - INFO - Epoch [147][2/2]	lr: 2.932e-04, eta: 0:05:28, time: 0.397, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7058, loss: 0.0015
+2023-04-22 11:29:33,717 - mmpose - INFO - Epoch [148][1/2]	lr: 2.942e-04, eta: 0:05:27, time: 4.915, data_time: 4.315, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6696, loss: 0.0016
+2023-04-22 11:29:34,091 - mmpose - INFO - Epoch [148][2/2]	lr: 2.952e-04, eta: 0:05:23, time: 0.372, data_time: 0.006, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6940, loss: 0.0016
+2023-04-22 11:29:39,138 - mmpose - INFO - Epoch [149][1/2]	lr: 2.962e-04, eta: 0:05:21, time: 4.974, data_time: 4.380, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6771, loss: 0.0016
+2023-04-22 11:29:39,537 - mmpose - INFO - Epoch [149][2/2]	lr: 2.972e-04, eta: 0:05:18, time: 0.400, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7071, loss: 0.0014
+2023-04-22 11:29:44,449 - mmpose - INFO - Epoch [150][1/2]	lr: 2.982e-04, eta: 0:05:16, time: 4.840, data_time: 4.225, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6904, loss: 0.0015
+2023-04-22 11:29:44,828 - mmpose - INFO - Epoch [150][2/2]	lr: 2.992e-04, eta: 0:05:13, time: 0.382, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7522, loss: 0.0014
+2023-04-22 11:29:44,892 - mmpose - INFO - Saving checkpoint at 150 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    37s[>>                                ] 2/33, 1.7 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.6 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.2 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.0 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 7.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.7 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.3 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.2 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 14.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 20.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 21.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 22.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 27.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.3 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.598
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.931
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.639
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.607
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.636
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.939
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.667
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.636
+2023-04-22 11:29:46,976 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_150.pth.
+2023-04-22 11:29:46,976 - mmpose - INFO - Best AP is 0.5977 at 150 epoch.
+2023-04-22 11:29:46,976 - mmpose - INFO - Epoch(val) [150][2]	AP: 0.5977, AP .5: 0.9307, AP .75: 0.6391, AP (M): -1.0000, AP (L): 0.6069, AR: 0.6364, AR .5: 0.9394, AR .75: 0.6667, AR (M): -1.0000, AR (L): 0.6364
+2023-04-22 11:29:51,902 - mmpose - INFO - Epoch [151][1/2]	lr: 3.002e-04, eta: 0:05:11, time: 4.917, data_time: 4.329, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7102, loss: 0.0015
+2023-04-22 11:29:52,296 - mmpose - INFO - Epoch [151][2/2]	lr: 3.012e-04, eta: 0:05:08, time: 0.394, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7394, loss: 0.0015
+2023-04-22 11:29:57,207 - mmpose - INFO - Epoch [152][1/2]	lr: 3.022e-04, eta: 0:05:06, time: 4.830, data_time: 4.235, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6817, loss: 0.0016
+2023-04-22 11:29:57,602 - mmpose - INFO - Epoch [152][2/2]	lr: 3.032e-04, eta: 0:05:02, time: 0.397, data_time: 0.008, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.7241, loss: 0.0017
+2023-04-22 11:30:02,436 - mmpose - INFO - Epoch [153][1/2]	lr: 3.042e-04, eta: 0:05:01, time: 4.754, data_time: 4.159, memory: 8727, heatmap_loss: 0.0017, acc_pose: 0.6527, loss: 0.0017
+2023-04-22 11:30:02,831 - mmpose - INFO - Epoch [153][2/2]	lr: 3.052e-04, eta: 0:04:57, time: 0.394, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7519, loss: 0.0015
+2023-04-22 11:30:07,702 - mmpose - INFO - Epoch [154][1/2]	lr: 3.062e-04, eta: 0:04:55, time: 4.800, data_time: 4.195, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7132, loss: 0.0015
+2023-04-22 11:30:08,082 - mmpose - INFO - Epoch [154][2/2]	lr: 3.072e-04, eta: 0:04:52, time: 0.382, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6646, loss: 0.0016
+2023-04-22 11:30:13,082 - mmpose - INFO - Epoch [155][1/2]	lr: 3.082e-04, eta: 0:04:50, time: 4.923, data_time: 4.326, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6755, loss: 0.0015
+2023-04-22 11:30:13,472 - mmpose - INFO - Epoch [155][2/2]	lr: 3.092e-04, eta: 0:04:47, time: 0.394, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7424, loss: 0.0015
+2023-04-22 11:30:18,322 - mmpose - INFO - Epoch [156][1/2]	lr: 3.102e-04, eta: 0:04:45, time: 4.778, data_time: 4.178, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7075, loss: 0.0015
+2023-04-22 11:30:18,706 - mmpose - INFO - Epoch [156][2/2]	lr: 3.112e-04, eta: 0:04:41, time: 0.384, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7111, loss: 0.0015
+2023-04-22 11:30:23,625 - mmpose - INFO - Epoch [157][1/2]	lr: 3.122e-04, eta: 0:04:40, time: 4.850, data_time: 4.263, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7291, loss: 0.0015
+2023-04-22 11:30:24,020 - mmpose - INFO - Epoch [157][2/2]	lr: 3.132e-04, eta: 0:04:36, time: 0.396, data_time: 0.006, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6736, loss: 0.0015
+2023-04-22 11:30:28,985 - mmpose - INFO - Epoch [158][1/2]	lr: 3.142e-04, eta: 0:04:34, time: 4.882, data_time: 4.266, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6875, loss: 0.0016
+2023-04-22 11:30:29,371 - mmpose - INFO - Epoch [158][2/2]	lr: 3.152e-04, eta: 0:04:31, time: 0.385, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7183, loss: 0.0016
+2023-04-22 11:30:34,357 - mmpose - INFO - Epoch [159][1/2]	lr: 3.162e-04, eta: 0:04:29, time: 4.901, data_time: 4.308, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6931, loss: 0.0015
+2023-04-22 11:30:34,622 - mmpose - INFO - Epoch [159][2/2]	lr: 3.172e-04, eta: 0:04:26, time: 0.268, data_time: 0.006, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7340, loss: 0.0014
+2023-04-22 11:30:39,479 - mmpose - INFO - Epoch [160][1/2]	lr: 3.182e-04, eta: 0:04:24, time: 4.786, data_time: 4.184, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7258, loss: 0.0015
+2023-04-22 11:30:39,857 - mmpose - INFO - Epoch [160][2/2]	lr: 3.192e-04, eta: 0:04:21, time: 0.380, data_time: 0.008, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7404, loss: 0.0013
+2023-04-22 11:30:39,919 - mmpose - INFO - Saving checkpoint at 160 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.4 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.3 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.0 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.625
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.931
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.673
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.628
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.652
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.939
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.697
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.652
+2023-04-22 11:30:41,973 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_160.pth.
+2023-04-22 11:30:41,974 - mmpose - INFO - Best AP is 0.6254 at 160 epoch.
+2023-04-22 11:30:41,974 - mmpose - INFO - Epoch(val) [160][2]	AP: 0.6254, AP .5: 0.9307, AP .75: 0.6728, AP (M): -1.0000, AP (L): 0.6276, AR: 0.6515, AR .5: 0.9394, AR .75: 0.6970, AR (M): -1.0000, AR (L): 0.6515
+2023-04-22 11:30:46,674 - mmpose - INFO - Epoch [161][1/2]	lr: 3.202e-04, eta: 0:04:19, time: 4.694, data_time: 4.100, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7012, loss: 0.0016
+2023-04-22 11:30:47,069 - mmpose - INFO - Epoch [161][2/2]	lr: 3.212e-04, eta: 0:04:15, time: 0.393, data_time: 0.006, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6846, loss: 0.0015
+2023-04-22 11:30:51,948 - mmpose - INFO - Epoch [162][1/2]	lr: 3.222e-04, eta: 0:04:13, time: 4.806, data_time: 4.186, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7016, loss: 0.0014
+2023-04-22 11:30:52,330 - mmpose - INFO - Epoch [162][2/2]	lr: 3.232e-04, eta: 0:04:10, time: 0.382, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6983, loss: 0.0015
+2023-04-22 11:30:57,366 - mmpose - INFO - Epoch [163][1/2]	lr: 3.242e-04, eta: 0:04:08, time: 4.969, data_time: 4.356, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.6749, loss: 0.0015
+2023-04-22 11:30:57,745 - mmpose - INFO - Epoch [163][2/2]	lr: 3.252e-04, eta: 0:04:05, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6992, loss: 0.0016
+2023-04-22 11:31:02,786 - mmpose - INFO - Epoch [164][1/2]	lr: 3.262e-04, eta: 0:04:03, time: 4.947, data_time: 4.325, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7167, loss: 0.0015
+2023-04-22 11:31:03,162 - mmpose - INFO - Epoch [164][2/2]	lr: 3.272e-04, eta: 0:04:00, time: 0.374, data_time: 0.006, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7325, loss: 0.0016
+2023-04-22 11:31:08,172 - mmpose - INFO - Epoch [165][1/2]	lr: 3.282e-04, eta: 0:03:58, time: 4.923, data_time: 4.329, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7033, loss: 0.0015
+2023-04-22 11:31:08,563 - mmpose - INFO - Epoch [165][2/2]	lr: 3.292e-04, eta: 0:03:54, time: 0.396, data_time: 0.008, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7724, loss: 0.0015
+2023-04-22 11:31:13,445 - mmpose - INFO - Epoch [166][1/2]	lr: 3.302e-04, eta: 0:03:52, time: 4.799, data_time: 4.188, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.7016, loss: 0.0016
+2023-04-22 11:31:13,824 - mmpose - INFO - Epoch [166][2/2]	lr: 3.312e-04, eta: 0:03:49, time: 0.378, data_time: 0.006, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7376, loss: 0.0015
+2023-04-22 11:31:18,665 - mmpose - INFO - Epoch [167][1/2]	lr: 3.322e-04, eta: 0:03:47, time: 4.770, data_time: 4.166, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6938, loss: 0.0016
+2023-04-22 11:31:19,044 - mmpose - INFO - Epoch [167][2/2]	lr: 3.332e-04, eta: 0:03:44, time: 0.377, data_time: 0.006, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7331, loss: 0.0014
+2023-04-22 11:31:23,937 - mmpose - INFO - Epoch [168][1/2]	lr: 3.342e-04, eta: 0:03:42, time: 4.826, data_time: 4.303, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7452, loss: 0.0014
+2023-04-22 11:31:24,316 - mmpose - INFO - Epoch [168][2/2]	lr: 3.352e-04, eta: 0:03:39, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0016, acc_pose: 0.6935, loss: 0.0016
+2023-04-22 11:31:29,368 - mmpose - INFO - Epoch [169][1/2]	lr: 3.362e-04, eta: 0:03:37, time: 4.978, data_time: 4.368, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7225, loss: 0.0014
+2023-04-22 11:31:29,745 - mmpose - INFO - Epoch [169][2/2]	lr: 3.372e-04, eta: 0:03:34, time: 0.377, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7258, loss: 0.0014
+2023-04-22 11:31:34,713 - mmpose - INFO - Epoch [170][1/2]	lr: 3.382e-04, eta: 0:03:32, time: 4.896, data_time: 4.306, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7007, loss: 0.0014
+2023-04-22 11:31:35,105 - mmpose - INFO - Epoch [170][2/2]	lr: 3.392e-04, eta: 0:03:28, time: 0.393, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7370, loss: 0.0014
+2023-04-22 11:31:35,163 - mmpose - INFO - Saving checkpoint at 170 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 8.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.8 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.593
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.869
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.642
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.600
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.627
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.879
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.667
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.627
+2023-04-22 11:31:36,808 - mmpose - INFO - Epoch(val) [170][2]	AP: 0.5933, AP .5: 0.8694, AP .75: 0.6421, AP (M): -1.0000, AP (L): 0.6004, AR: 0.6273, AR .5: 0.8788, AR .75: 0.6667, AR (M): -1.0000, AR (L): 0.6273
+2023-04-22 11:31:41,559 - mmpose - INFO - Epoch [171][1/2]	lr: 3.402e-05, eta: 0:03:26, time: 4.743, data_time: 4.139, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7183, loss: 0.0014
+2023-04-22 11:31:41,945 - mmpose - INFO - Epoch [171][2/2]	lr: 3.412e-05, eta: 0:03:23, time: 0.387, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7495, loss: 0.0014
+2023-04-22 11:31:46,691 - mmpose - INFO - Epoch [172][1/2]	lr: 3.422e-05, eta: 0:03:21, time: 4.680, data_time: 4.296, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7482, loss: 0.0014
+2023-04-22 11:31:46,927 - mmpose - INFO - Epoch [172][2/2]	lr: 3.432e-05, eta: 0:03:18, time: 0.237, data_time: 0.005, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7493, loss: 0.0014
+2023-04-22 11:31:51,874 - mmpose - INFO - Epoch [173][1/2]	lr: 3.442e-05, eta: 0:03:16, time: 4.875, data_time: 4.278, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7351, loss: 0.0013
+2023-04-22 11:31:52,267 - mmpose - INFO - Epoch [173][2/2]	lr: 3.452e-05, eta: 0:03:13, time: 0.390, data_time: 0.004, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7730, loss: 0.0014
+2023-04-22 11:31:57,229 - mmpose - INFO - Epoch [174][1/2]	lr: 3.462e-05, eta: 0:03:11, time: 4.872, data_time: 4.281, memory: 8727, heatmap_loss: 0.0015, acc_pose: 0.7130, loss: 0.0015
+2023-04-22 11:31:57,611 - mmpose - INFO - Epoch [174][2/2]	lr: 3.472e-05, eta: 0:03:07, time: 0.383, data_time: 0.008, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7807, loss: 0.0012
+2023-04-22 11:32:02,488 - mmpose - INFO - Epoch [175][1/2]	lr: 3.482e-05, eta: 0:03:05, time: 4.796, data_time: 4.184, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7279, loss: 0.0014
+2023-04-22 11:32:02,870 - mmpose - INFO - Epoch [175][2/2]	lr: 3.492e-05, eta: 0:03:02, time: 0.380, data_time: 0.006, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7245, loss: 0.0014
+2023-04-22 11:32:07,884 - mmpose - INFO - Epoch [176][1/2]	lr: 3.501e-05, eta: 0:03:00, time: 4.945, data_time: 4.350, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7251, loss: 0.0014
+2023-04-22 11:32:08,276 - mmpose - INFO - Epoch [176][2/2]	lr: 3.511e-05, eta: 0:02:57, time: 0.392, data_time: 0.008, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7422, loss: 0.0013
+2023-04-22 11:32:13,051 - mmpose - INFO - Epoch [177][1/2]	lr: 3.521e-05, eta: 0:02:55, time: 4.704, data_time: 4.115, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7116, loss: 0.0014
+2023-04-22 11:32:13,445 - mmpose - INFO - Epoch [177][2/2]	lr: 3.531e-05, eta: 0:02:52, time: 0.392, data_time: 0.006, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.7637, loss: 0.0011
+2023-04-22 11:32:18,356 - mmpose - INFO - Epoch [178][1/2]	lr: 3.541e-05, eta: 0:02:50, time: 4.837, data_time: 4.232, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7680, loss: 0.0013
+2023-04-22 11:32:18,735 - mmpose - INFO - Epoch [178][2/2]	lr: 3.551e-05, eta: 0:02:47, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7578, loss: 0.0014
+2023-04-22 11:32:23,578 - mmpose - INFO - Epoch [179][1/2]	lr: 3.561e-05, eta: 0:02:44, time: 4.775, data_time: 4.176, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7418, loss: 0.0013
+2023-04-22 11:32:23,971 - mmpose - INFO - Epoch [179][2/2]	lr: 3.571e-05, eta: 0:02:41, time: 0.393, data_time: 0.006, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7526, loss: 0.0012
+2023-04-22 11:32:28,785 - mmpose - INFO - Epoch [180][1/2]	lr: 3.581e-05, eta: 0:02:39, time: 4.745, data_time: 4.131, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7281, loss: 0.0013
+2023-04-22 11:32:29,161 - mmpose - INFO - Epoch [180][2/2]	lr: 3.591e-05, eta: 0:02:36, time: 0.376, data_time: 0.008, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7920, loss: 0.0013
+2023-04-22 11:32:29,219 - mmpose - INFO - Saving checkpoint at 180 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.4 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.3 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.2 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.1 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 9.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.9 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 26.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.2 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.636
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.899
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.709
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.641
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.667
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.909
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.727
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.667
+2023-04-22 11:32:31,274 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_180.pth.
+2023-04-22 11:32:31,274 - mmpose - INFO - Best AP is 0.6355 at 180 epoch.
+2023-04-22 11:32:31,274 - mmpose - INFO - Epoch(val) [180][2]	AP: 0.6355, AP .5: 0.8991, AP .75: 0.7094, AP (M): -1.0000, AP (L): 0.6414, AR: 0.6667, AR .5: 0.9091, AR .75: 0.7273, AR (M): -1.0000, AR (L): 0.6667
+2023-04-22 11:32:36,242 - mmpose - INFO - Epoch [181][1/2]	lr: 3.601e-05, eta: 0:02:34, time: 4.962, data_time: 4.358, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7666, loss: 0.0013
+2023-04-22 11:32:36,619 - mmpose - INFO - Epoch [181][2/2]	lr: 3.611e-05, eta: 0:02:31, time: 0.377, data_time: 0.006, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7649, loss: 0.0013
+2023-04-22 11:32:41,442 - mmpose - INFO - Epoch [182][1/2]	lr: 3.621e-05, eta: 0:02:29, time: 4.720, data_time: 4.122, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7436, loss: 0.0013
+2023-04-22 11:32:41,833 - mmpose - INFO - Epoch [182][2/2]	lr: 3.631e-05, eta: 0:02:26, time: 0.388, data_time: 0.004, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7949, loss: 0.0012
+2023-04-22 11:32:46,735 - mmpose - INFO - Epoch [183][1/2]	lr: 3.641e-05, eta: 0:02:23, time: 4.816, data_time: 4.224, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7230, loss: 0.0014
+2023-04-22 11:32:47,128 - mmpose - INFO - Epoch [183][2/2]	lr: 3.651e-05, eta: 0:02:20, time: 0.388, data_time: 0.003, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7635, loss: 0.0012
+2023-04-22 11:32:52,058 - mmpose - INFO - Epoch [184][1/2]	lr: 3.661e-05, eta: 0:02:18, time: 4.865, data_time: 4.281, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7508, loss: 0.0013
+2023-04-22 11:32:52,450 - mmpose - INFO - Epoch [184][2/2]	lr: 3.671e-05, eta: 0:02:15, time: 0.394, data_time: 0.006, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7667, loss: 0.0012
+2023-04-22 11:32:57,098 - mmpose - INFO - Epoch [185][1/2]	lr: 3.681e-05, eta: 0:02:13, time: 4.575, data_time: 4.289, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7266, loss: 0.0013
+2023-04-22 11:32:57,277 - mmpose - INFO - Epoch [185][2/2]	lr: 3.691e-05, eta: 0:02:10, time: 0.179, data_time: 0.003, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7788, loss: 0.0013
+2023-04-22 11:33:02,215 - mmpose - INFO - Epoch [186][1/2]	lr: 3.701e-05, eta: 0:02:08, time: 4.866, data_time: 4.267, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7305, loss: 0.0013
+2023-04-22 11:33:02,602 - mmpose - INFO - Epoch [186][2/2]	lr: 3.711e-05, eta: 0:02:05, time: 0.382, data_time: 0.004, memory: 8727, heatmap_loss: 0.0014, acc_pose: 0.7397, loss: 0.0014
+2023-04-22 11:33:07,553 - mmpose - INFO - Epoch [187][1/2]	lr: 3.721e-05, eta: 0:02:02, time: 4.883, data_time: 4.290, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7561, loss: 0.0012
+2023-04-22 11:33:07,931 - mmpose - INFO - Epoch [187][2/2]	lr: 3.731e-05, eta: 0:01:59, time: 0.378, data_time: 0.008, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7939, loss: 0.0012
+2023-04-22 11:33:12,852 - mmpose - INFO - Epoch [188][1/2]	lr: 3.741e-05, eta: 0:01:57, time: 4.850, data_time: 4.258, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7391, loss: 0.0013
+2023-04-22 11:33:13,247 - mmpose - INFO - Epoch [188][2/2]	lr: 3.751e-05, eta: 0:01:54, time: 0.395, data_time: 0.008, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.7793, loss: 0.0011
+2023-04-22 11:33:18,314 - mmpose - INFO - Epoch [189][1/2]	lr: 3.761e-05, eta: 0:01:52, time: 4.977, data_time: 4.378, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7984, loss: 0.0012
+2023-04-22 11:33:18,705 - mmpose - INFO - Epoch [189][2/2]	lr: 3.771e-05, eta: 0:01:49, time: 0.392, data_time: 0.008, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.8413, loss: 0.0011
+2023-04-22 11:33:23,711 - mmpose - INFO - Epoch [190][1/2]	lr: 3.781e-05, eta: 0:01:47, time: 4.923, data_time: 4.307, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7731, loss: 0.0012
+2023-04-22 11:33:24,083 - mmpose - INFO - Epoch [190][2/2]	lr: 3.791e-05, eta: 0:01:44, time: 0.373, data_time: 0.008, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7622, loss: 0.0012
+2023-04-22 11:33:24,140 - mmpose - INFO - Saving checkpoint at 190 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    35s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    17s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.6 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.5 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.4 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.3 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.2 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>                         ] 9/33, 8.1 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 9.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.9 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.9 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.8 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 16.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 17.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 18.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 19.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 24.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 25.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 26.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 27.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 28.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 29.4 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.639
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.871
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.678
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.648
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.670
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.879
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.697
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.670
+2023-04-22 11:33:26,194 - mmpose - INFO - Now best checkpoint is saved as best_AP_epoch_190.pth.
+2023-04-22 11:33:26,194 - mmpose - INFO - Best AP is 0.6387 at 190 epoch.
+2023-04-22 11:33:26,195 - mmpose - INFO - Epoch(val) [190][2]	AP: 0.6387, AP .5: 0.8713, AP .75: 0.6778, AP (M): -1.0000, AP (L): 0.6483, AR: 0.6697, AR .5: 0.8788, AR .75: 0.6970, AR (M): -1.0000, AR (L): 0.6697
+2023-04-22 11:33:30,990 - mmpose - INFO - Epoch [191][1/2]	lr: 3.801e-05, eta: 0:01:41, time: 4.787, data_time: 4.179, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7742, loss: 0.0012
+2023-04-22 11:33:31,367 - mmpose - INFO - Epoch [191][2/2]	lr: 3.811e-05, eta: 0:01:39, time: 0.379, data_time: 0.008, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.8330, loss: 0.0011
+2023-04-22 11:33:36,324 - mmpose - INFO - Epoch [192][1/2]	lr: 3.821e-05, eta: 0:01:36, time: 4.869, data_time: 4.255, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7588, loss: 0.0012
+2023-04-22 11:33:36,700 - mmpose - INFO - Epoch [192][2/2]	lr: 3.831e-05, eta: 0:01:33, time: 0.376, data_time: 0.007, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7416, loss: 0.0012
+2023-04-22 11:33:41,778 - mmpose - INFO - Epoch [193][1/2]	lr: 3.841e-05, eta: 0:01:31, time: 5.010, data_time: 4.413, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.8051, loss: 0.0012
+2023-04-22 11:33:42,174 - mmpose - INFO - Epoch [193][2/2]	lr: 3.851e-05, eta: 0:01:28, time: 0.397, data_time: 0.008, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7665, loss: 0.0013
+2023-04-22 11:33:47,161 - mmpose - INFO - Epoch [194][1/2]	lr: 3.861e-05, eta: 0:01:26, time: 4.919, data_time: 4.314, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7537, loss: 0.0013
+2023-04-22 11:33:47,540 - mmpose - INFO - Epoch [194][2/2]	lr: 3.871e-05, eta: 0:01:23, time: 0.380, data_time: 0.007, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7698, loss: 0.0013
+2023-04-22 11:33:52,499 - mmpose - INFO - Epoch [195][1/2]	lr: 3.881e-05, eta: 0:01:21, time: 4.871, data_time: 4.275, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7733, loss: 0.0012
+2023-04-22 11:33:52,888 - mmpose - INFO - Epoch [195][2/2]	lr: 3.891e-05, eta: 0:01:18, time: 0.387, data_time: 0.006, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.8300, loss: 0.0012
+2023-04-22 11:33:57,811 - mmpose - INFO - Epoch [196][1/2]	lr: 3.901e-05, eta: 0:01:15, time: 4.852, data_time: 4.246, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7529, loss: 0.0012
+2023-04-22 11:33:58,188 - mmpose - INFO - Epoch [196][2/2]	lr: 3.911e-05, eta: 0:01:13, time: 0.377, data_time: 0.007, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7837, loss: 0.0012
+2023-04-22 11:34:03,136 - mmpose - INFO - Epoch [197][1/2]	lr: 3.921e-05, eta: 0:01:10, time: 4.879, data_time: 4.286, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7695, loss: 0.0012
+2023-04-22 11:34:03,532 - mmpose - INFO - Epoch [197][2/2]	lr: 3.931e-05, eta: 0:01:07, time: 0.398, data_time: 0.008, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7664, loss: 0.0013
+2023-04-22 11:34:08,039 - mmpose - INFO - Epoch [198][1/2]	lr: 3.941e-05, eta: 0:01:05, time: 4.441, data_time: 4.162, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7513, loss: 0.0013
+2023-04-22 11:34:08,219 - mmpose - INFO - Epoch [198][2/2]	lr: 3.951e-05, eta: 0:01:02, time: 0.180, data_time: 0.002, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.8224, loss: 0.0011
+2023-04-22 11:34:13,111 - mmpose - INFO - Epoch [199][1/2]	lr: 3.961e-05, eta: 0:01:00, time: 4.823, data_time: 4.219, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7783, loss: 0.0012
+2023-04-22 11:34:13,500 - mmpose - INFO - Epoch [199][2/2]	lr: 3.971e-05, eta: 0:00:57, time: 0.389, data_time: 0.008, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.8106, loss: 0.0011
+2023-04-22 11:34:18,382 - mmpose - INFO - Epoch [200][1/2]	lr: 3.981e-05, eta: 0:00:54, time: 4.816, data_time: 4.218, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7403, loss: 0.0012
+2023-04-22 11:34:18,768 - mmpose - INFO - Epoch [200][2/2]	lr: 3.991e-05, eta: 0:00:52, time: 0.385, data_time: 0.006, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.8326, loss: 0.0011
+2023-04-22 11:34:18,830 - mmpose - INFO - Saving checkpoint at 200 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.7 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 8.0 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.8 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.3 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.7 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 23.0 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.4 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.7 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.630
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.871
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.708
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.637
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.670
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.879
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.727
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.670
+2023-04-22 11:34:20,480 - mmpose - INFO - Epoch(val) [200][2]	AP: 0.6302, AP .5: 0.8713, AP .75: 0.7081, AP (M): -1.0000, AP (L): 0.6373, AR: 0.6697, AR .5: 0.8788, AR .75: 0.7273, AR (M): -1.0000, AR (L): 0.6697
+2023-04-22 11:34:25,363 - mmpose - INFO - Epoch [201][1/2]	lr: 4.001e-06, eta: 0:00:49, time: 4.874, data_time: 4.279, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7782, loss: 0.0012
+2023-04-22 11:34:25,756 - mmpose - INFO - Epoch [201][2/2]	lr: 4.011e-06, eta: 0:00:46, time: 0.395, data_time: 0.008, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7738, loss: 0.0013
+2023-04-22 11:34:30,743 - mmpose - INFO - Epoch [202][1/2]	lr: 4.021e-06, eta: 0:00:44, time: 4.917, data_time: 4.313, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7663, loss: 0.0013
+2023-04-22 11:34:31,137 - mmpose - INFO - Epoch [202][2/2]	lr: 4.031e-06, eta: 0:00:41, time: 0.389, data_time: 0.004, memory: 8727, heatmap_loss: 0.0010, acc_pose: 0.7950, loss: 0.0010
+2023-04-22 11:34:36,023 - mmpose - INFO - Epoch [203][1/2]	lr: 4.041e-06, eta: 0:00:39, time: 4.813, data_time: 4.211, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7437, loss: 0.0013
+2023-04-22 11:34:36,398 - mmpose - INFO - Epoch [203][2/2]	lr: 4.051e-06, eta: 0:00:36, time: 0.375, data_time: 0.008, memory: 8727, heatmap_loss: 0.0010, acc_pose: 0.7765, loss: 0.0010
+2023-04-22 11:34:41,429 - mmpose - INFO - Epoch [204][1/2]	lr: 4.061e-06, eta: 0:00:33, time: 4.959, data_time: 4.346, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7884, loss: 0.0012
+2023-04-22 11:34:41,806 - mmpose - INFO - Epoch [204][2/2]	lr: 4.071e-06, eta: 0:00:31, time: 0.377, data_time: 0.008, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.8022, loss: 0.0012
+2023-04-22 11:34:46,849 - mmpose - INFO - Epoch [205][1/2]	lr: 4.081e-06, eta: 0:00:28, time: 4.970, data_time: 4.368, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7887, loss: 0.0012
+2023-04-22 11:34:47,241 - mmpose - INFO - Epoch [205][2/2]	lr: 4.091e-06, eta: 0:00:26, time: 0.391, data_time: 0.007, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7645, loss: 0.0012
+2023-04-22 11:34:52,250 - mmpose - INFO - Epoch [206][1/2]	lr: 4.101e-06, eta: 0:00:23, time: 4.931, data_time: 4.330, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.8044, loss: 0.0012
+2023-04-22 11:34:52,644 - mmpose - INFO - Epoch [206][2/2]	lr: 4.111e-06, eta: 0:00:20, time: 0.391, data_time: 0.005, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7955, loss: 0.0012
+2023-04-22 11:34:57,751 - mmpose - INFO - Epoch [207][1/2]	lr: 4.121e-06, eta: 0:00:18, time: 5.036, data_time: 4.430, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7854, loss: 0.0012
+2023-04-22 11:34:58,128 - mmpose - INFO - Epoch [207][2/2]	lr: 4.131e-06, eta: 0:00:15, time: 0.376, data_time: 0.008, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.7727, loss: 0.0011
+2023-04-22 11:35:03,156 - mmpose - INFO - Epoch [208][1/2]	lr: 4.141e-06, eta: 0:00:13, time: 4.938, data_time: 4.341, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7579, loss: 0.0012
+2023-04-22 11:35:03,548 - mmpose - INFO - Epoch [208][2/2]	lr: 4.151e-06, eta: 0:00:10, time: 0.391, data_time: 0.006, memory: 8727, heatmap_loss: 0.0010, acc_pose: 0.8437, loss: 0.0010
+2023-04-22 11:35:08,569 - mmpose - INFO - Epoch [209][1/2]	lr: 4.161e-06, eta: 0:00:07, time: 4.951, data_time: 4.345, memory: 8727, heatmap_loss: 0.0012, acc_pose: 0.7919, loss: 0.0012
+2023-04-22 11:35:08,962 - mmpose - INFO - Epoch [209][2/2]	lr: 4.171e-06, eta: 0:00:05, time: 0.391, data_time: 0.004, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.7845, loss: 0.0011
+2023-04-22 11:35:13,892 - mmpose - INFO - Epoch [210][1/2]	lr: 4.181e-06, eta: 0:00:02, time: 4.854, data_time: 4.259, memory: 8727, heatmap_loss: 0.0013, acc_pose: 0.7782, loss: 0.0013
+2023-04-22 11:35:14,284 - mmpose - INFO - Epoch [210][2/2]	lr: 4.191e-06, eta: 0:00:00, time: 0.393, data_time: 0.008, memory: 8727, heatmap_loss: 0.0011, acc_pose: 0.8120, loss: 0.0011
+2023-04-22 11:35:14,345 - mmpose - INFO - Saving checkpoint at 210 epochs
+[                                                  ] 0/33, elapsed: 0s, ETA:[>                                 ] 1/33, 0.9 task/s, elapsed: 1s, ETA:    36s[>>                                ] 2/33, 1.8 task/s, elapsed: 1s, ETA:    18s[>>>                               ] 3/33, 2.6 task/s, elapsed: 1s, ETA:    11s[>>>>                              ] 4/33, 3.5 task/s, elapsed: 1s, ETA:     8s[>>>>>                             ] 5/33, 4.4 task/s, elapsed: 1s, ETA:     6s[>>>>>>                            ] 6/33, 5.3 task/s, elapsed: 1s, ETA:     5s[>>>>>>>                           ] 7/33, 6.2 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>                          ] 8/33, 7.1 task/s, elapsed: 1s, ETA:     4s[>>>>>>>>>                         ] 9/33, 7.9 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>                       ] 10/33, 8.8 task/s, elapsed: 1s, ETA:     3s[>>>>>>>>>>>                      ] 11/33, 9.7 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>                     ] 12/33, 10.6 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>                    ] 13/33, 11.5 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>                   ] 14/33, 12.4 task/s, elapsed: 1s, ETA:     2s[>>>>>>>>>>>>>>                  ] 15/33, 13.2 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>                 ] 16/33, 14.1 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>                ] 17/33, 15.0 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>               ] 18/33, 15.9 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>              ] 19/33, 16.8 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>             ] 20/33, 17.6 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>            ] 21/33, 18.5 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>           ] 22/33, 19.4 task/s, elapsed: 1s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>          ] 23/33, 20.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>         ] 24/33, 21.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>        ] 25/33, 22.1 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>       ] 26/33, 22.9 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>      ] 27/33, 23.8 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>     ] 28/33, 24.7 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>    ] 29/33, 25.6 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 30/33, 26.5 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 31/33, 27.3 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 32/33, 28.2 task/s, elapsed: 1s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 33/33, 28.7 task/s, elapsed: 1s, ETA:     0s
+
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *keypoints*
+DONE (t=0.01s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.625
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.898
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.707
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.634
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] =  0.664
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] =  0.909
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] =  0.727
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] =  0.664
+2023-04-22 11:35:15,971 - mmpose - INFO - Epoch(val) [210][2]	AP: 0.6253, AP .5: 0.8981, AP .75: 0.7069, AP (M): -1.0000, AP (L): 0.6343, AR: 0.6636, AR .5: 0.9091, AR .75: 0.7273, AR (M): -1.0000, AR (L): 0.6636
+/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  FutureWarning,
+apex is not installed
+apex is not installed
+apex is not installed
+/home/shanchuan/mmcv/mmcv/cnn/bricks/transformer.py:27: UserWarning: Fail to import ``MultiScaleDeformableAttention`` from ``mmcv.ops.multi_scale_deform_attn``, You should install ``mmcv-full`` if you need this module. 
+  warnings.warn('Fail to import ``MultiScaleDeformableAttention`` from '
+usage: train.py [-h] [--work-dir WORK_DIR] [--resume-from RESUME_FROM]
+                [--no-validate] [--gpus GPUS | --gpu-ids GPU_IDS [GPU_IDS ...]
+                | --gpu-id GPU_ID] [--seed SEED] [--deterministic]
+                [--cfg-options CFG_OPTIONS [CFG_OPTIONS ...]]
+                [--launcher {none,pytorch,slurm,mpi}]
+                [--local_rank LOCAL_RANK] [--autoscale-lr]
+                config
+train.py: error: argument --gpu-id: not allowed with argument --gpus
+/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  FutureWarning,
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 2) local_rank: 0 (pid: 3713092) of binary: /home/shanchuan/anaconda3/envs/vit/bin/python
+Traceback (most recent call last):
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/run.py", line 713, in run
+    )(*cmd_args)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+tools/train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-04-24_01:50:55
+  host      : dbg21
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 3713092)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+apex is not installed
+apex is not installed
+apex is not installed
+/home/shanchuan/mmcv/mmcv/cnn/bricks/transformer.py:27: UserWarning: Fail to import ``MultiScaleDeformableAttention`` from ``mmcv.ops.multi_scale_deform_attn``, You should install ``mmcv-full`` if you need this module. 
+  warnings.warn('Fail to import ``MultiScaleDeformableAttention`` from '
+usage: train.py [-h] [--work-dir WORK_DIR] [--resume-from RESUME_FROM]
+                [--no-validate] [--gpus GPUS | --gpu-ids GPU_IDS [GPU_IDS ...]
+                | --gpu-id GPU_ID] [--seed SEED] [--deterministic]
+                [--cfg-options CFG_OPTIONS [CFG_OPTIONS ...]]
+                [--launcher {none,pytorch,slurm,mpi}]
+                [--local_rank LOCAL_RANK] [--autoscale-lr]
+                config
+train.py: error: argument --gpu-id: not allowed with argument --gpus
+/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  FutureWarning,
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 2) local_rank: 0 (pid: 3714200) of binary: /home/shanchuan/anaconda3/envs/vit/bin/python
+Traceback (most recent call last):
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/run.py", line 713, in run
+    )(*cmd_args)
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/shanchuan/anaconda3/envs/vit/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+tools/train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-04-24_01:52:20
+  host      : dbg21
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 3714200)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -9,3 +9,5 @@ PORT=${PORT:-29500}
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
 python -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT \
     $(dirname "$0")/test.py $CONFIG $CHECKPOINT --launcher pytorch ${@:4}
+
+# bash tools/dist_test.sh /home/shanchuan/ViT/configs/animal/2d_kpt_sview_rgb_img/topdown_heatmap/ap10k/ViTPose_small_animalweb_256x192.py /home/shanchuan/ViT/work_dirs/ViTPose_small_animalweb_256x192/latest.pth 1
